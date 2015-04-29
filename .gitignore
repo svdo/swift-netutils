@@ -1,0 +1,7 @@
+xcuserdata
+*.xccheckout
+.idea
+build
+docs
+.ruby-gemset
+.ruby-version
