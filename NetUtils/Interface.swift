@@ -44,6 +44,18 @@ public class Interface {
         family = Interface.extractFamily(data)
         address = Interface.extractAddress(data.ifa_addr.memory)
         netmask = Interface.extractAddress(data.ifa_netmask.memory)
+        let flags = Int32(data.ifa_flags)
+        running = ((flags & IFF_RUNNING) == IFF_RUNNING)
+        up = ((flags & IFF_UP) == IFF_UP)
+        loopback = ((flags & IFF_LOOPBACK) == IFF_LOOPBACK)
+        multicastSupported = ((flags & IFF_MULTICAST) == IFF_MULTICAST)
+        let broadcastValid : Bool = ((flags & IFF_BROADCAST) == IFF_BROADCAST)
+        if broadcastValid && data.ifa_dstaddr != nil {
+            broadcastAddress = Interface.extractAddress(data.ifa_dstaddr.memory)
+        }
+        else {
+            broadcastAddress = nil
+        }
     }
 
     private static func extractFamily(data:ifaddrs) -> Family {
@@ -76,12 +88,23 @@ public class Interface {
         return address
     }
 
-    private let name : String
     public func getName() -> String { return name }
-    private let family : Family
     public func getFamily() -> Family { return family }
-    private let address : String?
     public func getAddress() -> String? { return address }
-    private let netmask : String?
     public func getNetmask() -> String? { return netmask }
+    public func getBroadcastAddress() -> String? { return broadcastAddress }
+    public func isRunning() -> Bool { return running }
+    public func isUp() -> Bool { return up }
+    public func isLoopback() -> Bool { return loopback }
+    public func supportsMulticast() -> Bool { return multicastSupported }
+
+    private let name : String
+    private let family : Family
+    private let address : String?
+    private let netmask : String?
+    private let broadcastAddress : String?
+    private let running : Bool
+    private let up : Bool
+    private let loopback : Bool
+    private let multicastSupported : Bool
 }
