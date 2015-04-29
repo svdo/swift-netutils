@@ -1,10 +1,4 @@
-//
-//  NetUtils.h
-//  NetUtils
-//
-//  Created by Stefan on 28/04/15.
 //  Copyright (c) 2015 Stefan van den Oord. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 
