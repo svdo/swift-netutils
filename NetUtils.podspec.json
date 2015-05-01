@@ -7,7 +7,7 @@
         "type": "The Unlicense <http://unlicense.org>"
     },
     "source": {
-        "git": "https://github.com/AFNetworking/AFNetworking.git",
+        "git": "https://github.com/svdo/swift-netutils.git",
         "tag": "0.1"
     },
     "authors": "Stefan van den Oord",
