@@ -31,6 +31,8 @@
 		F89F99C71AF00EBD008719EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F89F99C81AF00EBD008719EC /* NetUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetUtilsTests.swift; sourceTree = "<group>"; };
 		F89F99D21AF00EE8008719EC /* Interface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
+		F8E52A9D1AF34B2D00DD5AF9 /* createModuleMap.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = createModuleMap.sh; sourceTree = "<group>"; };
+		F8E52A9E1AF34C3400DD5AF9 /* NetUtils.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NetUtils.podspec.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,8 @@
 		F89F99AC1AF00EBC008719EC = {
 			isa = PBXGroup;
 			children = (
+				F8E52A9E1AF34C3400DD5AF9 /* NetUtils.podspec.json */,
+				F8E52A9D1AF34B2D00DD5AF9 /* createModuleMap.sh */,
 				F89F99B81AF00EBD008719EC /* NetUtils */,
 				F89F99C51AF00EBD008719EC /* NetUtilsTests */,
 				F89F99B71AF00EBD008719EC /* Products */,
@@ -370,7 +374,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "${SRCROOT}/NetUtils/ifaddrs";
+				SWIFT_INCLUDE_PATHS = "/tmp/swift-netutils-ifaddrs";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -388,7 +392,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "${SRCROOT}/NetUtils/ifaddrs";
+				SWIFT_INCLUDE_PATHS = "/tmp/swift-netutils-ifaddrs";
 			};
 			name = Release;
 		};

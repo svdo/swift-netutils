@@ -1,6 +1,7 @@
 #!/bin/sh
 
-modulesDirectory=$DERIVED_FILES_DIR/modules
+#modulesDirectory=$DERIVED_FILES_DIR/modules
+modulesDirectory=/tmp/swift-netutils-ifaddrs
 modulesMap=$modulesDirectory/module.modulemap
 modulesMapTemp=$modulesDirectory/module.modulemap.tmp
 
