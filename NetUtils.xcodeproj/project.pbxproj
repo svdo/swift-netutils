@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F89C490F1AF4B26C00C96C61 /* NetUtils.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = F89C490E1AF4B26C00C96C61 /* NetUtils.podspec.json */; };
 		F89F99BC1AF00EBD008719EC /* NetUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F89F99BB1AF00EBD008719EC /* NetUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F89F99C21AF00EBD008719EC /* NetUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F89F99B61AF00EBD008719EC /* NetUtils.framework */; };
 		F89F99C91AF00EBD008719EC /* NetUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89F99C81AF00EBD008719EC /* NetUtilsTests.swift */; };
@@ -24,7 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F89C490C1AF410D500C96C61 /* swift-netutils.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "swift-netutils.podspec.json"; sourceTree = "<group>"; };
+		F89C490E1AF4B26C00C96C61 /* NetUtils.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NetUtils.podspec.json; sourceTree = "<group>"; };
 		F89F99B61AF00EBD008719EC /* NetUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89F99BA1AF00EBD008719EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F89F99BB1AF00EBD008719EC /* NetUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetUtils.h; sourceTree = "<group>"; };
@@ -57,7 +58,7 @@
 		F89F99AC1AF00EBC008719EC = {
 			isa = PBXGroup;
 			children = (
-				F89C490C1AF410D500C96C61 /* swift-netutils.podspec.json */,
+				F89C490E1AF4B26C00C96C61 /* NetUtils.podspec.json */,
 				F8E52A9D1AF34B2D00DD5AF9 /* createModuleMap.sh */,
 				F89F99B81AF00EBD008719EC /* NetUtils */,
 				F89F99C51AF00EBD008719EC /* NetUtilsTests */,
@@ -201,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F89C490F1AF4B26C00C96C61 /* NetUtils.podspec.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
