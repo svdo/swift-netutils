@@ -19,5 +19,6 @@
     "requires_arc": true,
     "xcconfig": {
         "SWIFT_INCLUDE_PATHS": "/tmp/swift-netutils-ifaddrs"
-    }
+    },
+	"prepare_command" = "modproj.rb"
 }
