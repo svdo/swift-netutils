@@ -18,7 +18,9 @@
     "source_files": "NetUtils/**/*.swift",
     "requires_arc": true,
     "xcconfig": {
-        "SWIFT_INCLUDE_PATHS": "$(SRCROOT)/ifaddrs"
+        "SWIFT_INCLUDE_PATHS[sdk=iphoneos*]": "$(SRCROOT)/ifaddrs/iphoneos",
+        "SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]": "$(SRCROOT)/ifaddrs/iphonesimulator",
+        "SWIFT_INCLUDE_PATHS[sdk=macosx*]": "$(SRCROOT)/ifaddrs/macosx"
     },
-    "preserve_paths": [ "ifaddrs.xcconfig", "ifaddrs/*" ]
+    "preserve_paths": [ "ifaddrs/*" ]
 }
