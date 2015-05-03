@@ -18,9 +18,9 @@
     "source_files": "NetUtils/**/*.swift",
     "requires_arc": true,
     "xcconfig": {
-        "SWIFT_INCLUDE_PATHS[sdk=iphoneos*]": "$(SRCROOT)/ifaddrs/iphoneos",
-        "SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]": "$(SRCROOT)/ifaddrs/iphonesimulator",
-        "SWIFT_INCLUDE_PATHS[sdk=macosx*]": "$(SRCROOT)/ifaddrs/macosx"
+        "SWIFT_INCLUDE_PATHS[sdk=iphoneos*]": "$(SRCROOT)/NetUtils/ifaddrs/iphoneos",
+        "SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]": "$(SRCROOT)/NetUtils/ifaddrs/iphonesimulator",
+        "SWIFT_INCLUDE_PATHS[sdk=macosx*]": "$(SRCROOT)/NetUtils/ifaddrs/macosx"
     },
     "preserve_paths": [ "ifaddrs/*" ]
 }
