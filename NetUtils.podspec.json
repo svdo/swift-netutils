@@ -20,5 +20,5 @@
     "xcconfig": {
         "SWIFT_INCLUDE_PATHS": "/tmp/swift-netutils-ifaddrs"
     },
-	"prepare_command" = "modproj.rb"
+	"prepare_command": "modproj.rb"
 }
