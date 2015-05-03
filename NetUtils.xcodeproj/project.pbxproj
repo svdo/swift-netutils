@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F89C490F1AF4B26C00C96C61 /* NetUtils.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = F89C490E1AF4B26C00C96C61 /* NetUtils.podspec.json */; };
 		F89F99BC1AF00EBD008719EC /* NetUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F89F99BB1AF00EBD008719EC /* NetUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F89F99C21AF00EBD008719EC /* NetUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F89F99B61AF00EBD008719EC /* NetUtils.framework */; };
 		F89F99C91AF00EBD008719EC /* NetUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89F99C81AF00EBD008719EC /* NetUtilsTests.swift */; };
@@ -33,7 +32,6 @@
 		F89F99C71AF00EBD008719EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F89F99C81AF00EBD008719EC /* NetUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetUtilsTests.swift; sourceTree = "<group>"; };
 		F89F99D21AF00EE8008719EC /* Interface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
-		F8E52A9D1AF34B2D00DD5AF9 /* createModuleMap.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = createModuleMap.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				F89C490E1AF4B26C00C96C61 /* NetUtils.podspec.json */,
-				F8E52A9D1AF34B2D00DD5AF9 /* createModuleMap.sh */,
 				F89F99B81AF00EBD008719EC /* NetUtils */,
 				F89F99C51AF00EBD008719EC /* NetUtilsTests */,
 				F89F99B71AF00EBD008719EC /* Products */,
@@ -128,7 +125,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F89F99CC1AF00EBD008719EC /* Build configuration list for PBXNativeTarget "NetUtils" */;
 			buildPhases = (
-				F89F99D61AF01C41008719EC /* Run Script */,
 				F89F99B11AF00EBD008719EC /* Sources */,
 				F89F99B21AF00EBD008719EC /* Frameworks */,
 				F89F99B31AF00EBD008719EC /* Headers */,
@@ -147,7 +143,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F89F99CF1AF00EBD008719EC /* Build configuration list for PBXNativeTarget "NetUtilsTests" */;
 			buildPhases = (
-				F834C0F61AF0F820005F3D0C /* ShellScript */,
 				F89F99BD1AF00EBD008719EC /* Sources */,
 				F89F99BE1AF00EBD008719EC /* Frameworks */,
 				F89F99BF1AF00EBD008719EC /* Resources */,
@@ -202,7 +197,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F89C490F1AF4B26C00C96C61 /* NetUtils.podspec.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,36 +208,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		F834C0F61AF0F820005F3D0C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/createModuleMap.sh";
-		};
-		F89F99D61AF01C41008719EC /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/createModuleMap.sh";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F89F99B11AF00EBD008719EC /* Sources */ = {
@@ -290,7 +254,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -338,7 +301,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -366,6 +328,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -375,7 +338,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "/tmp/swift-netutils-ifaddrs";
+				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "$(SRCROOT)/ifaddrs/iphoneos";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "$(SRCROOT)/ifaddrs/iphonesimulator";
+				"SWIFT_INCLUDE_PATHS[sdk=macosx*]" = "$(SRCROOT)/ifaddrs/macosx";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -384,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -393,13 +359,16 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "/tmp/swift-netutils-ifaddrs";
+				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "$(SRCROOT)/ifaddrs/iphoneos";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "$(SRCROOT)/ifaddrs/iphonesimulator";
+				"SWIFT_INCLUDE_PATHS[sdk=macosx*]" = "$(SRCROOT)/ifaddrs/macosx";
 			};
 			name = Release;
 		};
 		F89F99D01AF00EBD008719EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -417,6 +386,7 @@
 		F89F99D11AF00EBD008719EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

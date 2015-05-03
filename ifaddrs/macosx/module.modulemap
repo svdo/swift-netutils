@@ -1,0 +1,4 @@
+module ifaddrs [system] [extern_c] {
+    header "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/ifaddrs.h"
+    export *
+}

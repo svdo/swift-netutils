@@ -18,7 +18,7 @@
     "source_files": "NetUtils/**/*.swift",
     "requires_arc": true,
     "xcconfig": {
-        "SWIFT_INCLUDE_PATHS": "/tmp/swift-netutils-ifaddrs"
+        "SWIFT_INCLUDE_PATHS": "$(SRCROOT)/ifaddrs"
     },
-	"prepare_command": "ruby modproj.rb"
+    "preserve_paths": [ "ifaddrs.xcconfig", "ifaddrs/*" ]
 }
