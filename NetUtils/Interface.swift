@@ -22,7 +22,7 @@ public class Interface {
         var ifaddrsPtr = UnsafeMutablePointer<ifaddrs>()
         if getifaddrs(&ifaddrsPtr) == 0 {
             for (var ifaddrPtr = ifaddrsPtr; ifaddrPtr != nil; ifaddrPtr = ifaddrPtr.memory.ifa_next) {
-                var addr = ifaddrPtr.memory.ifa_addr.memory
+                let addr = ifaddrPtr.memory.ifa_addr.memory
                 if addr.sa_family == UInt8(AF_INET) || addr.sa_family == UInt8(AF_INET6) {
                     interfaces.append(Interface(data: ifaddrPtr.memory))
                 }
@@ -54,7 +54,7 @@ public class Interface {
 
     private static func extractFamily(data:ifaddrs) -> Family {
         var family : Family = .other
-        var addr = data.ifa_addr.memory
+        let addr = data.ifa_addr.memory
         if addr.sa_family == UInt8(AF_INET) {
             family = .ipv4
         }

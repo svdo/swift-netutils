@@ -21,22 +21,22 @@ class NetUtilsTests: XCTestCase {
 
     func dumpInterfaces(interfaces:[Interface]) {
         for i in interfaces {
-            var running = i.isRunning() ? "running" : "not running"
-            var up = i.isUp() ? "up" : "down"
-            var loopback = i.isLoopback() ? ", loopback" : ""
-            println("\(i.getName()) (\(running), \(up)\(loopback))")
-            println("    Family: \(i.getFamily().toString())")
+            let running = i.isRunning() ? "running" : "not running"
+            let up = i.isUp() ? "up" : "down"
+            let loopback = i.isLoopback() ? ", loopback" : ""
+            print("\(i.getName()) (\(running), \(up)\(loopback))")
+            print("    Family: \(i.getFamily().toString())")
             if let a = i.getAddress() {
-                println("    Address: \(a)")
+                print("    Address: \(a)")
             }
             if let nm = i.getNetmask() {
-                println("    Netmask: \(nm)")
+                print("    Netmask: \(nm)")
             }
             if let b = i.getBroadcastAddress() {
-                println("    broadcast: \(b)")
+                print("    broadcast: \(b)")
             }
-            var mc = i.supportsMulticast() ? "yes" : "no"
-            println("    multicast: \(mc)")
+            let mc = i.supportsMulticast() ? "yes" : "no"
+            print("    multicast: \(mc)")
         }
     }
 }
