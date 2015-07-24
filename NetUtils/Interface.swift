@@ -68,6 +68,18 @@ public class Interface {
     }
 
     private static func extractAddress(address:sockaddr) -> String? {
+        if (address.sa_family == sa_family_t(AF_INET)) {
+            return extractAddress_ipv4(address)
+        }
+        else if (address.sa_family == sa_family_t(AF_INET6)) {
+            return extractAddress_ipv6(address)
+        }
+        else {
+            return nil
+        }
+    }
+    
+    private static func extractAddress_ipv4(address:sockaddr) -> String? {
         var addr = address
         var address : String? = nil
         var hostname = [CChar](count: Int(2049), repeatedValue: 0)
@@ -80,6 +92,19 @@ public class Interface {
 //            println("ERROR: \(error)")
         }
         return address
+    }
+    
+    private static func extractAddress_ipv6(address:sockaddr) -> String? {
+        var addr = address
+        var ip : [Int8] = [Int8](count: Int(INET6_ADDRSTRLEN), repeatedValue: Int8(0))
+        return inetNtoP(&addr, ip: &ip)
+    }
+    
+    private static func inetNtoP(addr:UnsafeMutablePointer<sockaddr>, ip:UnsafeMutablePointer<Int8>) -> String? {
+        let addr6 = unsafeBitCast(addr, UnsafeMutablePointer<sockaddr_in6>.self)
+        let conversion:UnsafePointer<CChar> = inet_ntop(AF_INET6, &addr6.memory.sin6_addr, ip, socklen_t(INET6_ADDRSTRLEN))
+        let s = String.fromCString(conversion)
+        return s
     }
 
     public func getName() -> String { return name }
