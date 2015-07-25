@@ -1,0 +1,7 @@
+NetUtils for Swift
+==================
+
+Swift library that simplifies getting information about your network interfaces and their properties, both for iOS and OS X.
+This library is a wrapper around the BSD APIs like getifaddrs, to make it easy to use them from Swift.
+
+Recommended way of integrating this library is using CocoaPods: https://cocoapods.org/pods/NetUtils.
