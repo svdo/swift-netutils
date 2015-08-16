@@ -129,7 +129,10 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
     
     public var description: String { get { return getName() } }
     public var debugDescription: String { get {
-        var s = "Interface \(getName()) family:\(getFamily()) ip:\(getAddress())"
+        var s = "Interface name:\(getName()) family:\(getFamily())"
+        if let ip = getAddress() {
+            s += " ip:\(ip)"
+        }
         s += isUp() ? " (up)" : " (down)"
         s += isRunning() ? " (running)" : "(not running)"
         return s
