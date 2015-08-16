@@ -3,7 +3,7 @@
 import Foundation
 import ifaddrs
 
-public class Interface {
+public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
 
     public enum Family : Int {
         case ipv4, ipv6, other
@@ -126,4 +126,13 @@ public class Interface {
     private let up : Bool
     private let loopback : Bool
     private let multicastSupported : Bool
+    
+    public var description: String { get { return getName() } }
+    public var debugDescription: String { get {
+        var s = "Interface \(getName()) family:\(getFamily()) ip:\(getAddress())"
+        s += isUp() ? " (up)" : " (down)"
+        s += isRunning() ? " (running)" : "(not running)"
+        return s
+        } }
+
 }
