@@ -19,6 +19,15 @@ class NetUtilsTests: XCTestCase {
         XCTAssertTrue(filtered.count >= 1)
     }
 
+    func testCreateDummyInterface() {
+        let i = Interface.createTestDummy("dummyInterface", family: .ipv4, address: "1.2.3.4", multicastSupported: false, broadcastAddress: "5.6.7.8")
+        XCTAssertEqual(i.getName(), "dummyInterface")
+        XCTAssertEqual(i.getFamily(), Interface.Family.ipv4)
+        XCTAssertEqual(i.getAddress(), "1.2.3.4")
+        XCTAssertFalse(i.supportsMulticast())
+        XCTAssertEqual(i.getBroadcastAddress(), "5.6.7.8")
+    }
+
     func dumpInterfaces(interfaces:[Interface]) {
         for i in interfaces {
             let running = i.isRunning() ? "running" : "not running"

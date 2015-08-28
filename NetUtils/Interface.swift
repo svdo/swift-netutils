@@ -33,25 +33,40 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
         return interfaces
     }
     
-    public init(data:ifaddrs) {
-        self.name = String.fromCString(data.ifa_name)!
-        family = Interface.extractFamily(data)
-        address = Interface.extractAddress(data.ifa_addr.memory)
-        netmask = Interface.extractAddress(data.ifa_netmask.memory)
-        let flags = Int32(data.ifa_flags)
-        running = ((flags & IFF_RUNNING) == IFF_RUNNING)
-        up = ((flags & IFF_UP) == IFF_UP)
-        loopback = ((flags & IFF_LOOPBACK) == IFF_LOOPBACK)
-        multicastSupported = ((flags & IFF_MULTICAST) == IFF_MULTICAST)
-        let broadcastValid : Bool = ((flags & IFF_BROADCAST) == IFF_BROADCAST)
-        if broadcastValid && data.ifa_dstaddr != nil {
-            broadcastAddress = Interface.extractAddress(data.ifa_dstaddr.memory)
-        }
-        else {
-            broadcastAddress = nil
-        }
+    /**
+     *  Returns a new Interface instance that does not represent a real network interface, but can be used for (unit) testing.
+     */
+    public static func createTestDummy(name:String, family:Family, address:String, multicastSupported:Bool, broadcastAddress:String?) -> Interface
+    {
+        return Interface(name: name, family: family, address: address, netmask: nil, running: true, up: true, loopback: false, multicastSupported: multicastSupported, broadcastAddress: broadcastAddress)
+    }
+    
+    public init(name:String, family:Family, address:String?, netmask:String?, running:Bool, up:Bool, loopback:Bool, multicastSupported:Bool, broadcastAddress:String?) {
+        self.name = name
+        self.family = family
+        self.address = address
+        self.netmask = netmask
+        self.running = running
+        self.up = up
+        self.loopback = loopback
+        self.multicastSupported = multicastSupported
+        self.broadcastAddress = broadcastAddress
     }
 
+    convenience init(data:ifaddrs) {
+        let flags = Int32(data.ifa_flags)
+        let broadcastValid : Bool = ((flags & IFF_BROADCAST) == IFF_BROADCAST)
+        self.init(name: String.fromCString(data.ifa_name)!,
+            family: Interface.extractFamily(data),
+            address: Interface.extractAddress(data.ifa_addr.memory),
+            netmask: Interface.extractAddress(data.ifa_netmask.memory),
+            running: ((flags & IFF_RUNNING) == IFF_RUNNING),
+            up: ((flags & IFF_UP) == IFF_UP),
+            loopback: ((flags & IFF_LOOPBACK) == IFF_LOOPBACK),
+            multicastSupported: ((flags & IFF_MULTICAST) == IFF_MULTICAST),
+            broadcastAddress: ((broadcastValid && data.ifa_dstaddr != nil) ? Interface.extractAddress(data.ifa_dstaddr.memory) : nil))
+    }
+    
     private static func extractFamily(data:ifaddrs) -> Family {
         var family : Family = .other
         let addr = data.ifa_addr.memory
