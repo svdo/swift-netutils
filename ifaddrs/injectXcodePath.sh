@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -x
+
 defaultXcodePath="/Applications/Xcode.app/Contents/Developer"
 realXcodePath="`xcode-select -p`"
 
