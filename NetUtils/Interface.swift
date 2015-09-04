@@ -9,8 +9,8 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
         case ipv4, ipv6, other
         public func toString() -> String {
             switch (self) {
-                case .ipv4: return "IPV4"
-                case .ipv6: return "IPV6"
+                case .ipv4: return "IPv4"
+                case .ipv6: return "IPv6"
                 default: return "other"
             }
         }
@@ -124,7 +124,27 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
 
     public func getName() -> String { return name }
     public func getFamily() -> Family { return family }
+
     public func getAddress() -> String? { return address }
+    public func getAddressBytes() -> [UInt8]? {
+        guard let addr = address else { return nil }
+        
+        let af:Int32
+        let len:Int
+        switch family {
+        case .ipv4:
+            af = AF_INET
+            len = 4
+        case .ipv6:
+            af = AF_INET6
+            len = 16
+        default:
+            return nil
+        }
+        var bytes = [UInt8](count:len, repeatedValue:0)
+        let result = inet_pton(af, addr, &bytes)
+        return ( result == 1 ) ? bytes : nil
+    }
     public func getNetmask() -> String? { return netmask }
     public func getBroadcastAddress() -> String? { return broadcastAddress }
     public func isRunning() -> Bool { return running }

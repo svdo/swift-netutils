@@ -27,6 +27,41 @@ class NetUtilsTests: XCTestCase {
         XCTAssertFalse(i.supportsMulticast())
         XCTAssertEqual(i.getBroadcastAddress(), "5.6.7.8")
     }
+    
+    func testInet4AddressAsByteArray() {
+        let i = Interface.createTestDummy("lo0", family: .ipv4, address: "127.0.0.1", multicastSupported: false, broadcastAddress: nil)
+        let bytes:[UInt8] = i.getAddressBytes()!
+        XCTAssertEqual(bytes.count, 4)
+        XCTAssertEqual(bytes[0], 0x7F)
+        XCTAssertEqual(bytes[1], 0)
+        XCTAssertEqual(bytes[2], 0)
+        XCTAssertEqual(bytes[3], 1)
+    }
+    
+    func testInet6AddressAsByteArray() {
+        let i = Interface.createTestDummy("lo0", family: .ipv6, address: "fe80::dead:beaf", multicastSupported: false, broadcastAddress: nil)
+        let addressbytes:[UInt8]? = i.getAddressBytes()
+        XCTAssert(addressbytes != nil)
+        if let bytes = addressbytes {
+            XCTAssertEqual(bytes.count, 16)
+            XCTAssertEqual(bytes[0], 0xFE)
+            XCTAssertEqual(bytes[1], 0x80)
+            XCTAssertEqual(bytes[2], 0x00)
+            XCTAssertEqual(bytes[3], 0x00)
+            XCTAssertEqual(bytes[4], 0x00)
+            XCTAssertEqual(bytes[5], 0x00)
+            XCTAssertEqual(bytes[6], 0x00)
+            XCTAssertEqual(bytes[7], 0x00)
+            XCTAssertEqual(bytes[8], 0x00)
+            XCTAssertEqual(bytes[9], 0x00)
+            XCTAssertEqual(bytes[10], 0x00)
+            XCTAssertEqual(bytes[11], 0x00)
+            XCTAssertEqual(bytes[12], 0xDE)
+            XCTAssertEqual(bytes[13], 0xAD)
+            XCTAssertEqual(bytes[14], 0xBE)
+            XCTAssertEqual(bytes[15], 0xAF)
+        }
+    }
 
     func dumpInterfaces(interfaces:[Interface]) {
         for i in interfaces {
