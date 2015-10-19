@@ -2,6 +2,7 @@
 
 import Foundation
 import ifaddrs
+import SystemConfiguration.CaptiveNetwork
 
 public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
 
@@ -173,4 +174,20 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
         return s
         } }
 
+    public static var SSID: String? {
+        var currentSSID: String?
+        let interfaces:CFArray! = CNCopySupportedInterfaces()
+        for i in 0..<CFArrayGetCount(interfaces){
+            let interfaceName: UnsafePointer<Void> = CFArrayGetValueAtIndex(interfaces, i)
+            let rec = unsafeBitCast(interfaceName, AnyObject.self)
+            let unsafeInterfaceData = CNCopyCurrentNetworkInfo("\(rec)")
+            if unsafeInterfaceData != nil {
+                let interfaceData = unsafeInterfaceData! as Dictionary!
+                currentSSID = interfaceData["SSID"] as? String
+            } else {
+                currentSSID = ""
+            }
+        }
+        return currentSSID
+    }
 }
