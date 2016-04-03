@@ -19,13 +19,17 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
     public static func allInterfaces() -> [Interface] {
         var interfaces : [Interface] = []
         
-        var ifaddrsPtr = UnsafeMutablePointer<ifaddrs>()
+        var ifaddrsPtr = UnsafeMutablePointer<ifaddrs>(nil)
         if getifaddrs(&ifaddrsPtr) == 0 {
-            for (var ifaddrPtr = ifaddrsPtr; ifaddrPtr != nil; ifaddrPtr = ifaddrPtr.memory.ifa_next) {
+            
+            var ifaddrPtr = ifaddrsPtr
+            
+            while ifaddrPtr != nil {
                 let addr = ifaddrPtr.memory.ifa_addr.memory
                 if addr.sa_family == UInt8(AF_INET) || addr.sa_family == UInt8(AF_INET6) {
                     interfaces.append(Interface(data: ifaddrPtr.memory))
                 }
+                ifaddrPtr = ifaddrPtr.memory.ifa_next
             }
             freeifaddrs(ifaddrsPtr)
         }
