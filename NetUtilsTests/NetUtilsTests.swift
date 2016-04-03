@@ -14,23 +14,23 @@ class NetUtilsTests: XCTestCase {
 
     func testNonLoopbackIPV4Interfaces() {
         let interfaces = Interface.allInterfaces()
-        let filtered = interfaces.filter { ($0.getFamily() == .ipv4 && !$0.isLoopback()) }
+        let filtered = interfaces.filter { ($0.family == .ipv4 && !$0.isLoopback) }
         dumpInterfaces(filtered)
         XCTAssertTrue(filtered.count >= 1)
     }
 
     func testCreateDummyInterface() {
         let i = Interface.createTestDummy("dummyInterface", family: .ipv4, address: "1.2.3.4", multicastSupported: false, broadcastAddress: "5.6.7.8")
-        XCTAssertEqual(i.getName(), "dummyInterface")
-        XCTAssertEqual(i.getFamily(), Interface.Family.ipv4)
-        XCTAssertEqual(i.getAddress(), "1.2.3.4")
-        XCTAssertFalse(i.supportsMulticast())
-        XCTAssertEqual(i.getBroadcastAddress(), "5.6.7.8")
+        XCTAssertEqual(i.name, "dummyInterface")
+        XCTAssertEqual(i.family, Interface.Family.ipv4)
+        XCTAssertEqual(i.address, "1.2.3.4")
+        XCTAssertFalse(i.supportsMulticast)
+        XCTAssertEqual(i.broadcastAddress, "5.6.7.8")
     }
     
     func testInet4AddressAsByteArray() {
         let i = Interface.createTestDummy("lo0", family: .ipv4, address: "127.0.0.1", multicastSupported: false, broadcastAddress: nil)
-        let bytes:[UInt8] = i.getAddressBytes()!
+        let bytes:[UInt8] = i.addressBytes!
         XCTAssertEqual(bytes.count, 4)
         XCTAssertEqual(bytes[0], 0x7F)
         XCTAssertEqual(bytes[1], 0)
@@ -40,7 +40,7 @@ class NetUtilsTests: XCTestCase {
     
     func testInet6AddressAsByteArray() {
         let i = Interface.createTestDummy("lo0", family: .ipv6, address: "fe80::dead:beaf", multicastSupported: false, broadcastAddress: nil)
-        let addressbytes:[UInt8]? = i.getAddressBytes()
+        let addressbytes:[UInt8]? = i.addressBytes
         XCTAssert(addressbytes != nil)
         if let bytes = addressbytes {
             XCTAssertEqual(bytes.count, 16)
@@ -65,21 +65,21 @@ class NetUtilsTests: XCTestCase {
 
     func dumpInterfaces(interfaces:[Interface]) {
         for i in interfaces {
-            let running = i.isRunning() ? "running" : "not running"
-            let up = i.isUp() ? "up" : "down"
-            let loopback = i.isLoopback() ? ", loopback" : ""
-            print("\(i.getName()) (\(running), \(up)\(loopback))")
-            print("    Family: \(i.getFamily().toString())")
-            if let a = i.getAddress() {
+            let running = i.isRunning ? "running" : "not running"
+            let up = i.isUp ? "up" : "down"
+            let loopback = i.isLoopback ? ", loopback" : ""
+            print("\(i.name) (\(running), \(up)\(loopback))")
+            print("    Family: \(i.family.toString())")
+            if let a = i.address {
                 print("    Address: \(a)")
             }
-            if let nm = i.getNetmask() {
+            if let nm = i.netmask {
                 print("    Netmask: \(nm)")
             }
-            if let b = i.getBroadcastAddress() {
+            if let b = i.broadcastAddress {
                 print("    broadcast: \(b)")
             }
-            let mc = i.supportsMulticast() ? "yes" : "no"
+            let mc = i.supportsMulticast ? "yes" : "no"
             print("    multicast: \(mc)")
         }
     }
