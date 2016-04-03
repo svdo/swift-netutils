@@ -37,11 +37,6 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
         return interfaces
     }
     
-    public static var ipAddress: String? {
-        
-        return allInterfaces().filter({$0.name == "en0" && $0.family == .ipv4 }).last?.address
-    }
-    
     /**
      *  Returns a new Interface instance that does not represent a real network interface, but can be used for (unit) testing.
      */
