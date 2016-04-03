@@ -7,8 +7,7 @@
         "type": "The Unlicense <http://unlicense.org>"
     },
     "source": {
-        "git": "https://github.com/svdo/swift-netutils.git",
-        "tag": "1.3.2"
+        "git": "https://github.com/svdo/swift-netutils.git"
     },
     "authors": "Stefan van den Oord",
     "platforms": {
