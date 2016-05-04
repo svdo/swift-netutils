@@ -19,13 +19,17 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
     public static func allInterfaces() -> [Interface] {
         var interfaces : [Interface] = []
         
-        var ifaddrsPtr = UnsafeMutablePointer<ifaddrs>()
+        var ifaddrsPtr = UnsafeMutablePointer<ifaddrs>(nil)
         if getifaddrs(&ifaddrsPtr) == 0 {
-            for (var ifaddrPtr = ifaddrsPtr; ifaddrPtr != nil; ifaddrPtr = ifaddrPtr.memory.ifa_next) {
+            
+            var ifaddrPtr = ifaddrsPtr
+            
+            while ifaddrPtr != nil {
                 let addr = ifaddrPtr.memory.ifa_addr.memory
                 if addr.sa_family == UInt8(AF_INET) || addr.sa_family == UInt8(AF_INET6) {
                     interfaces.append(Interface(data: ifaddrPtr.memory))
                 }
+                ifaddrPtr = ifaddrPtr.memory.ifa_next
             }
             freeifaddrs(ifaddrsPtr)
         }
@@ -121,12 +125,8 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
         let s = String.fromCString(conversion)
         return s
     }
-
-    public func getName() -> String { return name }
-    public func getFamily() -> Family { return family }
-
-    public func getAddress() -> String? { return address }
-    public func getAddressBytes() -> [UInt8]? {
+    
+    public var addressBytes: [UInt8]? {
         guard let addr = address else { return nil }
         
         let af:Int32
@@ -145,32 +145,29 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
         let result = inet_pton(af, addr, &bytes)
         return ( result == 1 ) ? bytes : nil
     }
-    public func getNetmask() -> String? { return netmask }
-    public func getBroadcastAddress() -> String? { return broadcastAddress }
-    public func isRunning() -> Bool { return running }
-    public func isUp() -> Bool { return up }
-    public func isLoopback() -> Bool { return loopback }
-    public func supportsMulticast() -> Bool { return multicastSupported }
+    public var isRunning: Bool { return running }
+    public var isUp: Bool { return up }
+    public var isLoopback: Bool { return loopback }
+    public var supportsMulticast: Bool { return multicastSupported }
 
-    private let name : String
-    private let family : Family
-    private let address : String?
-    private let netmask : String?
-    private let broadcastAddress : String?
+    public let name : String
+    public let family : Family
+    public let address : String?
+    public let netmask : String?
+    public let broadcastAddress : String?
     private let running : Bool
     private let up : Bool
     private let loopback : Bool
     private let multicastSupported : Bool
     
-    public var description: String { get { return getName() } }
-    public var debugDescription: String { get {
-        var s = "Interface name:\(getName()) family:\(getFamily())"
-        if let ip = getAddress() {
+    public var description: String { return name }
+    public var debugDescription: String {
+        var s = "Interface name:\(name) family:\(family)"
+        if let ip = address {
             s += " ip:\(ip)"
         }
-        s += isUp() ? " (up)" : " (down)"
-        s += isRunning() ? " (running)" : "(not running)"
+        s += isUp ? " (up)" : " (down)"
+        s += isRunning ? " (running)" : "(not running)"
         return s
-        } }
-
+    }
 }
