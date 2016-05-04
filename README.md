@@ -1,4 +1,9 @@
-# NetUtils for Swift [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+# NetUtils for Swift 
+![](https://img.shields.io/cocoapods/v/NetUtils.svg)
+![](https://img.shields.io/cocoapods/l/NetUtils.svg)
+![](https://img.shields.io/cocoapods/p/NetUtils.svg)
+![](https://img.shields.io/cocoapods/metrics/doc-percent/NetUtils.svg)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 Swift library that simplifies getting information about your network interfaces and their properties, both for iOS and OS X.
 This library is a wrapper around the BSD APIs like `getifaddrs`, to make it easy to use them from Swift.
