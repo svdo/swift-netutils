@@ -4,7 +4,7 @@
     "summary": "Swift library that simplifies getting information about your network interfaces and their properties, both for iOS and OS X.",
     "homepage": "https://github.com/svdo/swift-netutils",
     "license": {
-        "type": "The Unlicense <http://unlicense.org>"
+        "type": "MIT", "file": "LICENSE.txt"
     },
     "source": {
         "git": "https://github.com/svdo/swift-netutils.git",
