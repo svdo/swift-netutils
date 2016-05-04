@@ -1,0 +1,9 @@
+Version 2.0.0
+=============
+This version supports the latest Swift version (2.2). The API of Interface is simplified:
+instead of the getters (like `getName()`) you now should simply use the properties (`name`).
+There are no functional changes.
+
+Older Versions
+==============
+Not documented in this document. Please refer to git history.
