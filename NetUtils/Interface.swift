@@ -19,11 +19,9 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
     public static func allInterfaces() -> [Interface] {
         var interfaces : [Interface] = []
         
-        var ifaddrsPtr = UnsafeMutablePointer<ifaddrs>(nil)
+        var ifaddrsPtr : UnsafeMutablePointer<ifaddrs> = nil
         if getifaddrs(&ifaddrsPtr) == 0 {
-            
             var ifaddrPtr = ifaddrsPtr
-            
             while ifaddrPtr != nil {
                 let addr = ifaddrPtr.memory.ifa_addr.memory
                 if addr.sa_family == UInt8(AF_INET) || addr.sa_family == UInt8(AF_INET6) {
