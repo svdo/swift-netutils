@@ -1,6 +1,6 @@
 # NetUtils for Swift 
 [![CocoaPods Version Badge](https://img.shields.io/cocoapods/v/NetUtils.svg)](https://cocoapods.org/pods/NetUtils)
-[![License Badge](https://img.shields.io/cocoapods/l/NetUtils.svg)](License.txt)
+[![License Badge](https://img.shields.io/cocoapods/l/NetUtils.svg)](LICENSE.txt)
 ![Supported Platforms Badge](https://img.shields.io/cocoapods/p/NetUtils.svg)
 [![Percentage Documented Badge](https://img.shields.io/cocoapods/metrics/doc-percent/NetUtils.svg)](http://cocoadocs.org/docsets/NetUtils)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
