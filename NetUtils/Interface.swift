@@ -19,17 +19,17 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
     public static func allInterfaces() -> [Interface] {
         var interfaces : [Interface] = []
         
-        var ifaddrsPtr = UnsafeMutablePointer<ifaddrs>(nil)
+        var ifaddrsPtr: UnsafeMutablePointer<ifaddrs>? = nil
         if getifaddrs(&ifaddrsPtr) == 0 {
             
             var ifaddrPtr = ifaddrsPtr
             
             while ifaddrPtr != nil {
-                let addr = ifaddrPtr.memory.ifa_addr.memory
+                let addr = ifaddrPtr!.pointee.ifa_addr.pointee
                 if addr.sa_family == UInt8(AF_INET) || addr.sa_family == UInt8(AF_INET6) {
-                    interfaces.append(Interface(data: ifaddrPtr.memory))
+                    interfaces.append(Interface(data: ifaddrPtr!.pointee))
                 }
-                ifaddrPtr = ifaddrPtr.memory.ifa_next
+                ifaddrPtr = ifaddrPtr!.pointee.ifa_next
             }
             freeifaddrs(ifaddrsPtr)
         }
@@ -40,7 +40,7 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
     /**
      *  Returns a new Interface instance that does not represent a real network interface, but can be used for (unit) testing.
      */
-    public static func createTestDummy(name:String, family:Family, address:String, multicastSupported:Bool, broadcastAddress:String?) -> Interface
+    public static func createTestDummy(_ name:String, family:Family, address:String, multicastSupported:Bool, broadcastAddress:String?) -> Interface
     {
         return Interface(name: name, family: family, address: address, netmask: nil, running: true, up: true, loopback: false, multicastSupported: multicastSupported, broadcastAddress: broadcastAddress)
     }
@@ -60,20 +60,20 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
     convenience init(data:ifaddrs) {
         let flags = Int32(data.ifa_flags)
         let broadcastValid : Bool = ((flags & IFF_BROADCAST) == IFF_BROADCAST)
-        self.init(name: String.fromCString(data.ifa_name)!,
+        self.init(name: String(cString: data.ifa_name),
             family: Interface.extractFamily(data),
-            address: Interface.extractAddress(data.ifa_addr.memory),
-            netmask: Interface.extractAddress(data.ifa_netmask.memory),
+            address: Interface.extractAddress(data.ifa_addr.pointee),
+            netmask: Interface.extractAddress(data.ifa_netmask.pointee),
             running: ((flags & IFF_RUNNING) == IFF_RUNNING),
             up: ((flags & IFF_UP) == IFF_UP),
             loopback: ((flags & IFF_LOOPBACK) == IFF_LOOPBACK),
             multicastSupported: ((flags & IFF_MULTICAST) == IFF_MULTICAST),
-            broadcastAddress: ((broadcastValid && data.ifa_dstaddr != nil) ? Interface.extractAddress(data.ifa_dstaddr.memory) : nil))
+            broadcastAddress: ((broadcastValid && data.ifa_dstaddr != nil) ? Interface.extractAddress(data.ifa_dstaddr.pointee) : nil))
     }
     
-    private static func extractFamily(data:ifaddrs) -> Family {
+    fileprivate static func extractFamily(_ data:ifaddrs) -> Family {
         var family : Family = .other
-        let addr = data.ifa_addr.memory
+        let addr = data.ifa_addr.pointee
         if addr.sa_family == UInt8(AF_INET) {
             family = .ipv4
         }
@@ -86,7 +86,7 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
         return family
     }
 
-    private static func extractAddress(address:sockaddr) -> String? {
+    fileprivate static func extractAddress(_ address:sockaddr) -> String? {
         if (address.sa_family == sa_family_t(AF_INET)) {
             return extractAddress_ipv4(address)
         }
@@ -98,13 +98,13 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
         }
     }
     
-    private static func extractAddress_ipv4(address:sockaddr) -> String? {
+    fileprivate static func extractAddress_ipv4(_ address:sockaddr) -> String? {
         var addr = address
         var address : String? = nil
-        var hostname = [CChar](count: Int(2049), repeatedValue: 0)
+        var hostname = [CChar](repeating: 0, count: Int(2049))
         if (getnameinfo(&addr, socklen_t(addr.sa_len), &hostname,
                 socklen_t(hostname.count), nil, socklen_t(0), NI_NUMERICHOST) == 0) {
-            address = String.fromCString(hostname)
+            address = String(cString: hostname)
         }
         else {
 //            var error = String.fromCString(gai_strerror(errno))!
@@ -113,16 +113,16 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
         return address
     }
     
-    private static func extractAddress_ipv6(address:sockaddr) -> String? {
+    fileprivate static func extractAddress_ipv6(_ address:sockaddr) -> String? {
         var addr = address
-        var ip : [Int8] = [Int8](count: Int(INET6_ADDRSTRLEN), repeatedValue: Int8(0))
+        var ip : [Int8] = [Int8](repeating: Int8(0), count: Int(INET6_ADDRSTRLEN))
         return inetNtoP(&addr, ip: &ip)
     }
     
-    private static func inetNtoP(addr:UnsafeMutablePointer<sockaddr>, ip:UnsafeMutablePointer<Int8>) -> String? {
-        let addr6 = unsafeBitCast(addr, UnsafeMutablePointer<sockaddr_in6>.self)
-        let conversion:UnsafePointer<CChar> = inet_ntop(AF_INET6, &addr6.memory.sin6_addr, ip, socklen_t(INET6_ADDRSTRLEN))
-        let s = String.fromCString(conversion)
+    fileprivate static func inetNtoP(_ addr:UnsafeMutablePointer<sockaddr>, ip:UnsafeMutablePointer<Int8>) -> String? {
+        let addr6 = unsafeBitCast(addr, to: UnsafeMutablePointer<sockaddr_in6>.self)
+        let conversion:UnsafePointer<CChar> = inet_ntop(AF_INET6, &addr6.pointee.sin6_addr, ip, socklen_t(INET6_ADDRSTRLEN))
+        let s = String(cString: conversion)
         return s
     }
     
@@ -141,7 +141,7 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
         default:
             return nil
         }
-        var bytes = [UInt8](count:len, repeatedValue:0)
+        var bytes = [UInt8](repeating: 0, count: len)
         let result = inet_pton(af, addr, &bytes)
         return ( result == 1 ) ? bytes : nil
     }
@@ -155,10 +155,10 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
     public let address : String?
     public let netmask : String?
     public let broadcastAddress : String?
-    private let running : Bool
-    private let up : Bool
-    private let loopback : Bool
-    private let multicastSupported : Bool
+    fileprivate let running : Bool
+    fileprivate let up : Bool
+    fileprivate let loopback : Bool
+    fileprivate let multicastSupported : Bool
     
     public var description: String { return name }
     public var debugDescription: String {

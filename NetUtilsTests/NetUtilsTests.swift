@@ -63,7 +63,7 @@ class NetUtilsTests: XCTestCase {
         }
     }
 
-    func dumpInterfaces(interfaces:[Interface]) {
+    func dumpInterfaces(_ interfaces:[Interface]) {
         for i in interfaces {
             let running = i.isRunning ? "running" : "not running"
             let up = i.isUp ? "up" : "down"
