@@ -23,5 +23,6 @@
         "SWIFT_INCLUDE_PATHS[sdk=macosx*]": "$(SRCROOT)/NetUtils/ifaddrs/macosx"
     },
     "preserve_paths": [ "ifaddrs/*" ],
-    "prepare_command": "ifaddrs/injectXcodePath.sh"
+    "prepare_command": "ifaddrs/injectXcodePath.sh",
+    "pod_target_xcconfig": { "SWIFT_VERSION": "3.0" }
 }
