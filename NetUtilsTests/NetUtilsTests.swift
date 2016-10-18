@@ -8,14 +8,14 @@ class NetUtilsTests: XCTestCase {
 
     func testAllInterfaces() {
         let interfaces = Interface.allInterfaces()
-        dumpInterfaces(interfaces)
+        dumpInterfaces(interfaces: interfaces)
         XCTAssertTrue(interfaces.count >= 2) /* at least loopback and ethernet */
     }
 
     func testNonLoopbackIPV4Interfaces() {
         let interfaces = Interface.allInterfaces()
         let filtered = interfaces.filter { ($0.family == .ipv4 && !$0.isLoopback) }
-        dumpInterfaces(filtered)
+        dumpInterfaces(interfaces: filtered)
         XCTAssertTrue(filtered.count >= 1)
     }
 
