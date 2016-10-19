@@ -10,6 +10,8 @@ This library is a wrapper around the BSD APIs like `getifaddrs`, to make it easy
 
 Recommended way of integrating this library is using CocoaPods: https://cocoapods.org/pods/NetUtils.
 
+This library now requires Swift 3.
+
 ## Background Info
 Some system APIs you can simply use from Swift, but others you cannot. The difference is that some are made available
 as a module, and some are not. The APIs around network interfaces are not exposed as a module, which means that you
