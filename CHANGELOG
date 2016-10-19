@@ -1,3 +1,7 @@
+Version 3.0.1
+=============
+Added Jazzy config file, hoping to fix CocoaDocs generation that way...
+
 Version 3.0.0
 =============
 Swift 3 support.
