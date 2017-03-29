@@ -146,10 +146,10 @@ open class Interface : CustomStringConvertible, CustomDebugStringConvertible {
     }
     
     fileprivate static func inetNtoP(_ addr:UnsafeMutablePointer<sockaddr>, ip:UnsafeMutablePointer<Int8>) -> String? {
-        let addr6 = unsafeBitCast(addr, to: UnsafeMutablePointer<sockaddr_in6>.self)
-        let conversion:UnsafePointer<CChar> = inet_ntop(AF_INET6, &addr6.pointee.sin6_addr, ip, socklen_t(INET6_ADDRSTRLEN))
-        let s = String(cString: conversion)
-        return s
+        return addr.withMemoryRebound(to: sockaddr_in6.self, capacity: 1) { (addr6) -> String? in
+            let conversion:UnsafePointer<CChar> = inet_ntop(AF_INET6, &addr6.pointee.sin6_addr, ip, socklen_t(INET6_ADDRSTRLEN))
+            return String(cString: conversion)
+        }
     }
     
     /**
