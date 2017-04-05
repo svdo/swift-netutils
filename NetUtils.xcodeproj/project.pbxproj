@@ -32,6 +32,9 @@
 		F89F99C71AF00EBD008719EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F89F99C81AF00EBD008719EC /* NetUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetUtilsTests.swift; sourceTree = "<group>"; };
 		F89F99D21AF00EE8008719EC /* Interface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
+		F8A3F0D81E9503A80010303F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F8A3F0D91E9503C30010303F /* CHANGELOG */ = {isa = PBXFileReference; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
+		F8A3F0DA1E9503C30010303F /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				F89C490E1AF4B26C00C96C61 /* NetUtils.podspec.json */,
+				F8A3F0D81E9503A80010303F /* README.md */,
+				F8A3F0D91E9503C30010303F /* CHANGELOG */,
+				F8A3F0DA1E9503C30010303F /* LICENSE.txt */,
 				F89F99B81AF00EBD008719EC /* NetUtils */,
 				F89F99C51AF00EBD008719EC /* NetUtilsTests */,
 				F89F99B71AF00EBD008719EC /* Products */,
