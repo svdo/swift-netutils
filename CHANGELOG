@@ -1,3 +1,8 @@
+Version 3.0.2
+=============
+- Fixed warning because of new Swift version (#11)
+- Moved generated documentation to github.io
+
 Version 3.0.1
 =============
 Added Jazzy config file, hoping to fix CocoaDocs generation that way...
