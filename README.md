@@ -1,4 +1,6 @@
 # NetUtils for Swift 
+![Swift Version 3](https://img.shields.io/badge/Swift-v3-yellow.svg)
+
 [![CocoaPods Version Badge](https://img.shields.io/cocoapods/v/NetUtils.svg)](https://cocoapods.org/pods/NetUtils)
 [![License Badge](https://img.shields.io/cocoapods/l/NetUtils.svg)](LICENSE.txt)
 ![Supported Platforms Badge](https://img.shields.io/cocoapods/p/NetUtils.svg)
