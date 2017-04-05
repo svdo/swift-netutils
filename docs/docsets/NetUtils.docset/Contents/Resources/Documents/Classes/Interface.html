@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Interface Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/Interface" class="dashAnchor"></a>
+    <a title="Interface Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">NetUtils Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/svdo/swift-netutils"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">NetUtils Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Interface Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Interface.html">Interface</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Interface/Family.html">– Family</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Interface</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">Interface</span> <span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">CustomDebugStringConvertible</span></code></pre>
+
+                </div>
+              </div>
+            <p>This class represents a network interface in your system. For example, <code>en0</code> with a certain IP address.
+ It is a wrapper around the <code>getifaddrs</code> system call.</p>
+
+<p>Typical use of this class is to first call <code><a href="../Classes/Interface.html#/s:ZFC8NetUtils9Interface13allInterfacesFT_GSaS0__">Interface.allInterfaces()</a></code> and then use the properties of the interface(s) that you need.</p>
+
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code>/usr/include/ifaddrs.h</code>
+
+</div>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:OC8NetUtils9Interface6Family"></a>
+                    <a name="//apple_ref/swift/Enum/Family" class="dashAnchor"></a>
+                    <a class="token" href="#/s:OC8NetUtils9Interface6Family">Family</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The network interface family (IPv4 or IPv6).</p>
+
+                        <a href="../Classes/Interface/Family.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Family</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L17-L35">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC8NetUtils9Interface13allInterfacesFT_GSaS0__"></a>
+                    <a name="//apple_ref/swift/Method/allInterfaces()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC8NetUtils9Interface13allInterfacesFT_GSaS0__">allInterfaces()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns all network interfaces in your system. If you have an interface name (e.g. <code>en0</code>) that has
+multiple IP addresses (e.g. one IPv4 address and a few IPv6 addresses), then they will be returned
+as separate instances of Interface.
+- Returns: An array containing all network interfaces in your system.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">allInterfaces</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Interface</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array containing all network interfaces in your system.</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L43-L60">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC8NetUtils9Interface15createTestDummyFTSS6familyOS0_6Family7addressSS18multicastSupportedSb16broadcastAddressGSqSS__S0_"></a>
+                    <a name="//apple_ref/swift/Method/createTestDummy(_:family:address:multicastSupported:broadcastAddress:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC8NetUtils9Interface15createTestDummyFTSS6familyOS0_6Family7addressSS18multicastSupportedSb16broadcastAddressGSqSS__S0_">createTestDummy(_:family:address:multicastSupported:broadcastAddress:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a new Interface instance that does not represent a real network interface, but can be used for (unit) testing.
+- Returns: An instance of Interface that does <em>not</em> represent a real network interface.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">createTestDummy</span><span class="p">(</span><span class="n">_</span> <span class="nv">name</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">family</span><span class="p">:</span><span class="kt"><a href="../Classes/Interface/Family.html">Family</a></span><span class="p">,</span> <span class="nv">address</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">multicastSupported</span><span class="p">:</span><span class="kt">Bool</span><span class="p">,</span> <span class="nv">broadcastAddress</span><span class="p">:</span><span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Interface</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An instance of Interface that does  represent a real network interface.</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L66-L69">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC8NetUtils9InterfacecFT4nameSS6familyOS0_6Family7addressGSqSS_7netmaskGSqSS_7runningSb2upSb8loopbackSb18multicastSupportedSb16broadcastAddressGSqSS__S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(name:family:address:netmask:running:up:loopback:multicastSupported:broadcastAddress:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC8NetUtils9InterfacecFT4nameSS6familyOS0_6Family7addressGSqSS_7netmaskGSqSS_7runningSb2upSb8loopbackSb18multicastSupportedSb16broadcastAddressGSqSS__S0_">init(name:family:address:netmask:running:up:loopback:multicastSupported:broadcastAddress:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize a new Interface with the given properties.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">family</span><span class="p">:</span><span class="kt"><a href="../Classes/Interface/Family.html">Family</a></span><span class="p">,</span> <span class="nv">address</span><span class="p">:</span><span class="kt">String</span><span class="p">?,</span> <span class="nv">netmask</span><span class="p">:</span><span class="kt">String</span><span class="p">?,</span> <span class="nv">running</span><span class="p">:</span><span class="kt">Bool</span><span class="p">,</span> <span class="nv">up</span><span class="p">:</span><span class="kt">Bool</span><span class="p">,</span> <span class="nv">loopback</span><span class="p">:</span><span class="kt">Bool</span><span class="p">,</span> <span class="nv">multicastSupported</span><span class="p">:</span><span class="kt">Bool</span><span class="p">,</span> <span class="nv">broadcastAddress</span><span class="p">:</span><span class="kt">String</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L74-L84">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8NetUtils9Interface12addressBytesGSqGSaVs5UInt8__"></a>
+                    <a name="//apple_ref/swift/Property/addressBytes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8NetUtils9Interface12addressBytesGSqGSaVs5UInt8__">addressBytes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates the network format representation of the interface&rsquo;s IP address. Wraps <code>inet_pton</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">addressBytes</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt8</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L158-L176">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8NetUtils9Interface9isRunningSb"></a>
+                    <a name="//apple_ref/swift/Property/isRunning" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8NetUtils9Interface9isRunningSb">isRunning</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>IFF_RUNNING</code> flag of <code>ifaddrs-&gt;ifa_flags</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">isRunning</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L179">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8NetUtils9Interface4isUpSb"></a>
+                    <a name="//apple_ref/swift/Property/isUp" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8NetUtils9Interface4isUpSb">isUp</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>IFF_UP</code> flag of <code>ifaddrs-&gt;ifa_flags</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">isUp</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L182">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8NetUtils9Interface10isLoopbackSb"></a>
+                    <a name="//apple_ref/swift/Property/isLoopback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8NetUtils9Interface10isLoopbackSb">isLoopback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>IFF_LOOPBACK</code> flag of <code>ifaddrs-&gt;ifa_flags</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">isLoopback</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L185">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8NetUtils9Interface17supportsMulticastSb"></a>
+                    <a name="//apple_ref/swift/Property/supportsMulticast" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8NetUtils9Interface17supportsMulticastSb">supportsMulticast</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>IFF_MULTICAST</code> flag of <code>ifaddrs-&gt;ifa_flags</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">supportsMulticast</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L188">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8NetUtils9Interface4nameSS"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8NetUtils9Interface4nameSS">name</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Field <code>ifaddrs-&gt;ifa_name</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">let</span> <span class="nv">name</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L191">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8NetUtils9Interface6familyOS0_6Family"></a>
+                    <a name="//apple_ref/swift/Property/family" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8NetUtils9Interface6familyOS0_6Family">family</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Field <code>ifaddrs-&gt;ifa_addr-&gt;sa_family</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">let</span> <span class="nv">family</span> <span class="p">:</span> <span class="kt"><a href="../Classes/Interface/Family.html">Family</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L194">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8NetUtils9Interface7addressGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/address" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8NetUtils9Interface7addressGSqSS_">address</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Extracted from <code>ifaddrs-&gt;ifa_addr</code>, supports both IPv4 and IPv6.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">let</span> <span class="nv">address</span> <span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L197">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8NetUtils9Interface7netmaskGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/netmask" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8NetUtils9Interface7netmaskGSqSS_">netmask</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Extracted from <code>ifaddrs-&gt;ifa_netmask</code>, supports both IPv4 and IPv6.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">let</span> <span class="nv">netmask</span> <span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L200">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8NetUtils9Interface16broadcastAddressGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/broadcastAddress" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8NetUtils9Interface16broadcastAddressGSqSS_">broadcastAddress</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Extracted from <code>ifaddrs-&gt;ifa_dstaddr</code>. Not applicable for IPv6.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">let</span> <span class="nv">broadcastAddress</span> <span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L203">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8NetUtils9Interface11descriptionSS"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8NetUtils9Interface11descriptionSS">description</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the interface name.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L211">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC8NetUtils9Interface16debugDescriptionSS"></a>
+                    <a name="//apple_ref/swift/Property/debugDescription" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC8NetUtils9Interface16debugDescriptionSS">debugDescription</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a string containing a few properties of the Interface.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">debugDescription</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L214-L222">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>Copyright © 2015 <a class="link" href="https://github.com/svdo" target="_blank" rel="external">Stefan van den Oord</a>. All rights reserved</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
