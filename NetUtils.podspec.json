@@ -3,6 +3,7 @@
     "version": "3.0.2",
     "summary": "Swift library that simplifies getting information about your network interfaces and their properties, both for iOS and OS X.",
     "homepage": "https://github.com/svdo/swift-netutils",
+    "documentation_url": "http://svdo.github.io/swift-netutils",
     "license": {
         "type": "MIT", "file": "LICENSE.txt"
     },
