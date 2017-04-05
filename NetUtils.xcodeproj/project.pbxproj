@@ -164,7 +164,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Stefan van den Oord";
 				TargetAttributes = {
 					F89F99B51AF00EBD008719EC = {
