@@ -1,7 +1,7 @@
 //  Copyright (c) 2015 Stefan van den Oord. All rights reserved.
 
 import Foundation
-import ifaddrs
+import Darwin
 
 /**
  * This class represents a network interface in your system. For example, `en0` with a certain IP address.
