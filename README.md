@@ -1,5 +1,5 @@
-# NetUtils for Swift 
-![Swift Version 3](https://img.shields.io/badge/Swift-v3-yellow.svg)
+# NetUtils for Swift
+![Swift Version 4](https://img.shields.io/badge/Swift-v4-yellow.svg)
 [![CocoaPods Version Badge](https://img.shields.io/cocoapods/v/NetUtils.svg)](https://cocoapods.org/pods/NetUtils)
 [![License Badge](https://img.shields.io/cocoapods/l/NetUtils.svg)](LICENSE.txt)
 ![Supported Platforms Badge](https://img.shields.io/cocoapods/p/NetUtils.svg)
@@ -9,9 +9,13 @@
 Swift library that simplifies getting information about your network interfaces and their properties, both for iOS and OS X.
 This library is a wrapper around the BSD APIs like `getifaddrs`, to make it easy to use them from Swift.
 
-Recommended way of integrating this library is using CocoaPods: https://cocoapods.org/pods/NetUtils.
+Recommended way of integrating this library is using CocoaPods: https://cocoapods.org/pods/NetUtils. In your `Podfile`, add:
 
-This library now requires Swift 3.
+```ruby
+pod 'NetUtils', :git => 'https://github.com/svdo/swift-netutils', :branch => 'swift4'
+```
+
+This branch requires Xcode 9 & Swift 4.
 
 ## Background Info
 Some system APIs you can simply use from Swift, but others you cannot. The difference is that some are made available
