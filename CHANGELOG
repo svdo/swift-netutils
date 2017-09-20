@@ -1,3 +1,7 @@
+Version 4.0.0
+=============
+Added Swift 4.0 support.
+
 Version 3.0.2
 =============
 - Fixed warning because of new Swift version (#11)
