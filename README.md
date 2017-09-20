@@ -1,4 +1,4 @@
-# NetUtils for Swift 
+# NetUtils for Swift
 ![Swift Version 3](https://img.shields.io/badge/Swift-v3-yellow.svg)
 [![CocoaPods Version Badge](https://img.shields.io/cocoapods/v/NetUtils.svg)](https://cocoapods.org/pods/NetUtils)
 [![License Badge](https://img.shields.io/cocoapods/l/NetUtils.svg)](LICENSE.txt)
@@ -11,7 +11,7 @@ This library is a wrapper around the BSD APIs like `getifaddrs`, to make it easy
 
 Recommended way of integrating this library is using CocoaPods: https://cocoapods.org/pods/NetUtils.
 
-This library now requires Swift 3.
+This library now requires Swift 3. There is also a branch [`swift4`](https://github.com/svdo/swift-netutils/tree/swift4) in case you want to use this from Swift 4.
 
 ## Background Info
 Some system APIs you can simply use from Swift, but others you cannot. The difference is that some are made available
