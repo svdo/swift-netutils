@@ -54,8 +54,7 @@
             <p>This class represents a network interface in your system. For example, <code>en0</code> with a certain IP address.
  It is a wrapper around the <code>getifaddrs</code> system call.</p>
 
-<p>Typical use of this class is to first call <code><a href="../Classes/Interface.html#/s:ZFC8NetUtils9Interface13allInterfacesFT_GSaS0__">Interface.allInterfaces()</a></code> and then use the properties of the interface(s) that you need.</p>
-
+<p>Typical use of this class is to first call <code><a href="../Classes/Interface.html#/s:8NetUtils9InterfaceC13allInterfacesSayACGyFZ">Interface.allInterfaces()</a></code> and then use the properties of the interface(s) that you need.</p>
 <div class="aside aside-see">
     <p class="aside-title">See</p>
     <code>/usr/include/ifaddrs.h</code>
@@ -69,9 +68,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:OC8NetUtils9Interface6Family"></a>
+                    <a name="/s:8NetUtils9InterfaceC6FamilyO"></a>
                     <a name="//apple_ref/swift/Enum/Family" class="dashAnchor"></a>
-                    <a class="token" href="#/s:OC8NetUtils9Interface6Family">Family</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC6FamilyO">Family</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -92,7 +91,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L17-L35">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.0.0/NetUtils/Interface.swift#L21-L39">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -100,9 +99,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:ZFC8NetUtils9Interface13allInterfacesFT_GSaS0__"></a>
+                    <a name="/s:8NetUtils9InterfaceC13allInterfacesSayACGyFZ"></a>
                     <a name="//apple_ref/swift/Method/allInterfaces()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFC8NetUtils9Interface13allInterfacesFT_GSaS0__">allInterfaces()</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC13allInterfacesSayACGyFZ">allInterfaces()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -112,8 +111,7 @@
                       <div class="abstract">
                         <p>Returns all network interfaces in your system. If you have an interface name (e.g. <code>en0</code>) that has
 multiple IP addresses (e.g. one IPv4 address and a few IPv6 addresses), then they will be returned
-as separate instances of Interface.
-- Returns: An array containing all network interfaces in your system.</p>
+as separate instances of Interface.</p>
 
                       </div>
                       <div class="declaration">
@@ -127,10 +125,9 @@ as separate instances of Interface.
                       <div>
                         <h4>Return Value</h4>
                         <p>An array containing all network interfaces in your system.</p>
-
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L43-L60">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.0.0/NetUtils/Interface.swift#L47-L64">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -138,9 +135,9 @@ as separate instances of Interface.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:ZFC8NetUtils9Interface15createTestDummyFTSS6familyOS0_6Family7addressSS18multicastSupportedSb16broadcastAddressGSqSS__S0_"></a>
+                    <a name="/s:8NetUtils9InterfaceC15createTestDummyACSS_AC6FamilyO6familySS7addressSb18multicastSupportedSSSg16broadcastAddresstFZ"></a>
                     <a name="//apple_ref/swift/Method/createTestDummy(_:family:address:multicastSupported:broadcastAddress:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFC8NetUtils9Interface15createTestDummyFTSS6familyOS0_6Family7addressSS18multicastSupportedSb16broadcastAddressGSqSS__S0_">createTestDummy(_:family:address:multicastSupported:broadcastAddress:)</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC15createTestDummyACSS_AC6FamilyO6familySS7addressSb18multicastSupportedSSSg16broadcastAddresstFZ">createTestDummy(_:family:address:multicastSupported:broadcastAddress:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -148,8 +145,7 @@ as separate instances of Interface.
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns a new Interface instance that does not represent a real network interface, but can be used for (unit) testing.
-- Returns: An instance of Interface that does <em>not</em> represent a real network interface.</p>
+                        <p>Returns a new Interface instance that does not represent a real network interface, but can be used for (unit) testing.</p>
 
                       </div>
                       <div class="declaration">
@@ -162,11 +158,10 @@ as separate instances of Interface.
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>An instance of Interface that does  represent a real network interface.</p>
-
+                        <p>An instance of Interface that does <em>not</em> represent a real network interface.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L66-L69">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.0.0/NetUtils/Interface.swift#L70-L73">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -174,9 +169,9 @@ as separate instances of Interface.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC8NetUtils9InterfacecFT4nameSS6familyOS0_6Family7addressGSqSS_7netmaskGSqSS_7runningSb2upSb8loopbackSb18multicastSupportedSb16broadcastAddressGSqSS__S0_"></a>
+                    <a name="/s:8NetUtils9InterfaceCACSS4name_AC6FamilyO6familySSSg7addressAH7netmaskSb7runningSb2upSb8loopbackSb18multicastSupportedAH16broadcastAddresstcfc"></a>
                     <a name="//apple_ref/swift/Method/init(name:family:address:netmask:running:up:loopback:multicastSupported:broadcastAddress:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC8NetUtils9InterfacecFT4nameSS6familyOS0_6Family7addressGSqSS_7netmaskGSqSS_7runningSb2upSb8loopbackSb18multicastSupportedSb16broadcastAddressGSqSS__S0_">init(name:family:address:netmask:running:up:loopback:multicastSupported:broadcastAddress:)</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceCACSS4name_AC6FamilyO6familySSSg7addressAH7netmaskSb7runningSb2upSb8loopbackSb18multicastSupportedAH16broadcastAddresstcfc">init(name:family:address:netmask:running:up:loopback:multicastSupported:broadcastAddress:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -196,7 +191,7 @@ as separate instances of Interface.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L74-L84">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.0.0/NetUtils/Interface.swift#L78-L88">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -204,9 +199,9 @@ as separate instances of Interface.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8NetUtils9Interface12addressBytesGSqGSaVs5UInt8__"></a>
+                    <a name="/s:8NetUtils9InterfaceC12addressBytesSays5UInt8VGSgv"></a>
                     <a name="//apple_ref/swift/Property/addressBytes" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8NetUtils9Interface12addressBytesGSqGSaVs5UInt8__">addressBytes</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC12addressBytesSays5UInt8VGSgv">addressBytes</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -226,7 +221,7 @@ as separate instances of Interface.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L158-L176">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.0.0/NetUtils/Interface.swift#L162-L180">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -234,9 +229,9 @@ as separate instances of Interface.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8NetUtils9Interface9isRunningSb"></a>
+                    <a name="/s:8NetUtils9InterfaceC9isRunningSbv"></a>
                     <a name="//apple_ref/swift/Property/isRunning" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8NetUtils9Interface9isRunningSb">isRunning</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC9isRunningSbv">isRunning</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -256,7 +251,7 @@ as separate instances of Interface.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L179">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.0.0/NetUtils/Interface.swift#L183">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -264,9 +259,9 @@ as separate instances of Interface.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8NetUtils9Interface4isUpSb"></a>
+                    <a name="/s:8NetUtils9InterfaceC4isUpSbv"></a>
                     <a name="//apple_ref/swift/Property/isUp" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8NetUtils9Interface4isUpSb">isUp</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC4isUpSbv">isUp</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -286,7 +281,7 @@ as separate instances of Interface.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L182">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.0.0/NetUtils/Interface.swift#L186">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -294,9 +289,9 @@ as separate instances of Interface.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8NetUtils9Interface10isLoopbackSb"></a>
+                    <a name="/s:8NetUtils9InterfaceC10isLoopbackSbv"></a>
                     <a name="//apple_ref/swift/Property/isLoopback" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8NetUtils9Interface10isLoopbackSb">isLoopback</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC10isLoopbackSbv">isLoopback</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -316,7 +311,7 @@ as separate instances of Interface.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L185">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.0.0/NetUtils/Interface.swift#L189">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -324,9 +319,9 @@ as separate instances of Interface.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8NetUtils9Interface17supportsMulticastSb"></a>
+                    <a name="/s:8NetUtils9InterfaceC17supportsMulticastSbv"></a>
                     <a name="//apple_ref/swift/Property/supportsMulticast" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8NetUtils9Interface17supportsMulticastSb">supportsMulticast</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC17supportsMulticastSbv">supportsMulticast</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -346,7 +341,7 @@ as separate instances of Interface.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L188">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.0.0/NetUtils/Interface.swift#L192">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -354,9 +349,9 @@ as separate instances of Interface.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8NetUtils9Interface4nameSS"></a>
+                    <a name="/s:8NetUtils9InterfaceC4nameSSv"></a>
                     <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8NetUtils9Interface4nameSS">name</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC4nameSSv">name</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -376,7 +371,7 @@ as separate instances of Interface.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L191">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.0.0/NetUtils/Interface.swift#L195">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -384,9 +379,9 @@ as separate instances of Interface.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8NetUtils9Interface6familyOS0_6Family"></a>
+                    <a name="/s:8NetUtils9InterfaceC6familyAC6FamilyOv"></a>
                     <a name="//apple_ref/swift/Property/family" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8NetUtils9Interface6familyOS0_6Family">family</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC6familyAC6FamilyOv">family</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -406,7 +401,7 @@ as separate instances of Interface.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L194">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.0.0/NetUtils/Interface.swift#L198">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -414,9 +409,9 @@ as separate instances of Interface.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8NetUtils9Interface7addressGSqSS_"></a>
+                    <a name="/s:8NetUtils9InterfaceC7addressSSSgv"></a>
                     <a name="//apple_ref/swift/Property/address" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8NetUtils9Interface7addressGSqSS_">address</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC7addressSSSgv">address</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -436,7 +431,7 @@ as separate instances of Interface.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L197">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.0.0/NetUtils/Interface.swift#L201">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -444,9 +439,9 @@ as separate instances of Interface.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8NetUtils9Interface7netmaskGSqSS_"></a>
+                    <a name="/s:8NetUtils9InterfaceC7netmaskSSSgv"></a>
                     <a name="//apple_ref/swift/Property/netmask" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8NetUtils9Interface7netmaskGSqSS_">netmask</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC7netmaskSSSgv">netmask</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -466,7 +461,7 @@ as separate instances of Interface.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L200">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.0.0/NetUtils/Interface.swift#L204">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -474,9 +469,9 @@ as separate instances of Interface.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8NetUtils9Interface16broadcastAddressGSqSS_"></a>
+                    <a name="/s:8NetUtils9InterfaceC16broadcastAddressSSSgv"></a>
                     <a name="//apple_ref/swift/Property/broadcastAddress" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8NetUtils9Interface16broadcastAddressGSqSS_">broadcastAddress</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC16broadcastAddressSSSgv">broadcastAddress</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -496,7 +491,7 @@ as separate instances of Interface.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L203">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.0.0/NetUtils/Interface.swift#L207">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -504,9 +499,9 @@ as separate instances of Interface.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8NetUtils9Interface11descriptionSS"></a>
+                    <a name="/s:8NetUtils9InterfaceC11descriptionSSv"></a>
                     <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8NetUtils9Interface11descriptionSS">description</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC11descriptionSSv">description</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -526,7 +521,7 @@ as separate instances of Interface.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L211">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.0.0/NetUtils/Interface.swift#L215">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -534,9 +529,9 @@ as separate instances of Interface.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC8NetUtils9Interface16debugDescriptionSS"></a>
+                    <a name="/s:8NetUtils9InterfaceC16debugDescriptionSSv"></a>
                     <a name="//apple_ref/swift/Property/debugDescription" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC8NetUtils9Interface16debugDescriptionSS">debugDescription</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC16debugDescriptionSSv">debugDescription</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -556,7 +551,7 @@ as separate instances of Interface.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/3.0.2/NetUtils/Interface.swift#L214-L222">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.0.0/NetUtils/Interface.swift#L218-L226">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -567,7 +562,7 @@ as separate instances of Interface.
         </section>
         <section id="footer">
           <p>Copyright © 2015 <a class="link" href="https://github.com/svdo" target="_blank" rel="external">Stefan van den Oord</a>. All rights reserved</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
