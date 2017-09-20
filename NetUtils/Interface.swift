@@ -1,7 +1,11 @@
 //  Copyright (c) 2015 Stefan van den Oord. All rights reserved.
 
 import Foundation
-import ifaddrs
+#if swift(>=4.0)
+    import Darwin
+#else
+    import ifaddrs
+#endif
 
 /**
  * This class represents a network interface in your system. For example, `en0` with a certain IP address.
