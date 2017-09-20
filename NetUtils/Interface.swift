@@ -1,7 +1,11 @@
 //  Copyright (c) 2015 Stefan van den Oord. All rights reserved.
 
 import Foundation
-import ifaddrs
+#if swift(>=3.2)
+    // ifaddrs is included in Darwin, which is imported by Foundation already.
+#else
+    import ifaddrs
+#endif
 
 /**
  * This class represents a network interface in your system. For example, `en0` with a certain IP address.
