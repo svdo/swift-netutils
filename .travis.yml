@@ -6,14 +6,16 @@ matrix:
     - os: osx
       osx_image: xcode9
       env:
+        - XCODE=9
         - IOS_VERSION=11.0
         - TEST_DIR=Xcode9Swift4
     - os: osx
       env:
+        - XCODE=8
         - IOS_VERSION=9.3
         - TEST_DIR=Xcode8Swift3
 before_install:
   - gem install xcpretty
 script:
-  - set -o pipefail && xcodebuild -project NetUtils.xcodeproj -scheme NetUtils test -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6,OS=${IOS_VERSION}"|xcpretty
+  - if [ ${XCODE} = "9" ]; then set -o pipefail && xcodebuild -project NetUtils.xcodeproj -scheme NetUtils test -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6,OS=${IOS_VERSION}"|xcpretty; fi
   - ./Tests/${TEST_DIR}/runTest.sh
