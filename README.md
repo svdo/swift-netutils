@@ -30,7 +30,7 @@ Please note that both IPv4 and IPv6 interfaces are supported.
 
 ## Development Info
 Note for developers: `pod lib lint` will fail, because the prepare command is not run. After you push the tag
-`pod spec lint` should pass.
+`pod spec lint --swift-version=3.1` should pass.
 
 ## License
 This project is released under the [MIT license](LICENSE.txt).
