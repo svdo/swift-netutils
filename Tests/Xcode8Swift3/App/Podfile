@@ -1,0 +1,4 @@
+target 'App' do
+  use_frameworks!
+  pod 'NetUtils', :git => 'https://github.com/svdo/swift-NetUtils', :branch => 'master'
+end
