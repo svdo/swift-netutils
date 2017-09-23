@@ -37,7 +37,7 @@ main() {
     else
         echo "Xcode 9 and above: ifaddrs module maps not needed."
         cd $(dirname $0)
-        rm */module.modulemap
+        rm -f */module.modulemap
     fi
 
 }
