@@ -5,6 +5,7 @@ set -o pipefail
 xcodeVersion=$(xcrun xcodebuild -version)
 if ( ! ( echo ${xcodeVersion} | grep "Xcode 8" > /dev/null 2>&1 ) ); then
     echo "Expected Xcode 8.x, got "$(xcrun xcodebuild -version|grep "Xcode ")
+    exit 1
 fi
 
 (
