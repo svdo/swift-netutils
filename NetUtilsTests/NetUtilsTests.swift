@@ -1,6 +1,5 @@
 //  Copyright (c) 2015 Stefan van den Oord. All rights reserved.
 
-import UIKit
 import XCTest
 import NetUtils
 

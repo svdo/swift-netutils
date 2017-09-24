@@ -6,6 +6,7 @@
 ![Supported Platforms Badge](https://img.shields.io/cocoapods/p/NetUtils.svg)
 [![Percentage Documented Badge](https://img.shields.io/cocoapods/metrics/doc-percent/NetUtils.svg)](http://cocoadocs.org/docsets/NetUtils)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Build Status](https://travis-ci.org/svdo/swift-netutils.svg?branch=master)](https://travis-ci.org/svdo/swift-netutils)
 
 Swift library that simplifies getting information about your network interfaces and their properties, both for iOS and OS X.
@@ -20,6 +21,9 @@ Some system APIs you can simply use from Swift, but others you cannot. The diffe
 as a module, and some are not. The APIs around network interfaces are not exposed as a module, which means that you
 cannot use them from Swift without defining a module for them yourself. I documented this problem extensively over
 here: https://ind.ie/labs/blog/using-system-headers-in-swift.
+
+## Installation
+This library can be installed via CocoaPods, Carthage and Swift Package Manager.
 
 ## Usage
 This module contains only one class: `Interface`. This class represents a network interface. It has a static method
