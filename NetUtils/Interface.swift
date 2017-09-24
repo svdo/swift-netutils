@@ -1,7 +1,7 @@
 //  Copyright (c) 2015 Stefan van den Oord. All rights reserved.
 
 import Foundation
-#if swift(>=4.0)
+#if swift(>=3.2)
     import Darwin
 #else
     import ifaddrs
