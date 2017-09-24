@@ -1,3 +1,8 @@
+Version 4.0.1
+=============
+Better check in source code for whether our own `ifaddrs` module map needs
+to be used or not.
+
 Version 4.0.0
 =============
 Added Swift 4.0 support.
