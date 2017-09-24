@@ -3,8 +3,8 @@ objc: No
 author: Stefan van den Oord
 author_url: https://github.com/svdo
 github_url: https://github.com/svdo/swift-netutils
-github_file_prefix: https://github.com/svdo/swift-netutils/tree/4.0.1
+github_file_prefix: https://github.com/svdo/swift-netutils/tree/4.0.2
 module: NetUtils
-module_version: 4.0.1
+module_version: 4.0.2
 readme: README.md
 copyright: Copyright © 2015 [Stefan van den Oord](https://github.com/svdo). All rights reserved
