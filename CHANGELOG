@@ -1,3 +1,8 @@
+Version 4.0.3
+=============
+- Fixes issue #21 by adding shared scheme for macOS builds.
+- Fixes compiler warnings and updates to Swift 4.2.
+
 Version 4.0.2
 =============
 - Added Swift Package Manager support.
