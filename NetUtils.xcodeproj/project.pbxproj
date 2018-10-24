@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F84D6AC62180F552000C928E /* NetUtils_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = F84D6AC52180F552000C928E /* NetUtils_macOS.h */; };
+		F84D6AC82180F552000C928E /* NetUtils_macOS.m in Sources */ = {isa = PBXBuildFile; fileRef = F84D6AC72180F552000C928E /* NetUtils_macOS.m */; };
+		F84D6ACC2180F562000C928E /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89F99D21AF00EE8008719EC /* Interface.swift */; };
+		F84D6AD62180F5BE000C928E /* libNetUtils.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F84D6AC32180F552000C928E /* libNetUtils.dylib */; };
+		F84D6ADC2180F5C6000C928E /* NetUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89F99C81AF00EBD008719EC /* NetUtilsTests.swift */; };
 		F89F99BC1AF00EBD008719EC /* NetUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F89F99BB1AF00EBD008719EC /* NetUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F89F99C21AF00EBD008719EC /* NetUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F89F99B61AF00EBD008719EC /* NetUtils.framework */; };
 		F89F99C91AF00EBD008719EC /* NetUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89F99C81AF00EBD008719EC /* NetUtilsTests.swift */; };
@@ -14,6 +19,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F84D6AD72180F5BE000C928E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F89F99AD1AF00EBC008719EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F84D6AC22180F552000C928E;
+			remoteInfo = "NetUtils-macOS";
+		};
 		F89F99C31AF00EBD008719EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F89F99AD1AF00EBC008719EC /* Project object */;
@@ -24,6 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F84D6AC32180F552000C928E /* libNetUtils.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libNetUtils.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		F84D6AC52180F552000C928E /* NetUtils_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetUtils_macOS.h; sourceTree = "<group>"; };
+		F84D6AC72180F552000C928E /* NetUtils_macOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetUtils_macOS.m; sourceTree = "<group>"; };
+		F84D6AD12180F5BD000C928E /* NetUtils-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NetUtils-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F84D6AD52180F5BE000C928E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F89C490E1AF4B26C00C96C61 /* NetUtils.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NetUtils.podspec.json; sourceTree = "<group>"; };
 		F89F99B61AF00EBD008719EC /* NetUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89F99BA1AF00EBD008719EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,6 +55,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F84D6AC12180F552000C928E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F84D6ACE2180F5BD000C928E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F84D6AD62180F5BE000C928E /* libNetUtils.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F89F99B21AF00EBD008719EC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -56,6 +88,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F84D6AC42180F552000C928E /* NetUtils-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				F84D6AC52180F552000C928E /* NetUtils_macOS.h */,
+				F84D6AC72180F552000C928E /* NetUtils_macOS.m */,
+			);
+			path = "NetUtils-macOS";
+			sourceTree = "<group>";
+		};
+		F84D6AD22180F5BE000C928E /* NetUtils-macOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				F84D6AD52180F5BE000C928E /* Info.plist */,
+			);
+			path = "NetUtils-macOSTests";
+			sourceTree = "<group>";
+		};
 		F89F99AC1AF00EBC008719EC = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +114,8 @@
 				F8A3F0DA1E9503C30010303F /* LICENSE.txt */,
 				F89F99B81AF00EBD008719EC /* NetUtils */,
 				F89F99C51AF00EBD008719EC /* NetUtilsTests */,
+				F84D6AC42180F552000C928E /* NetUtils-macOS */,
+				F84D6AD22180F5BE000C928E /* NetUtils-macOSTests */,
 				F89F99B71AF00EBD008719EC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +125,8 @@
 			children = (
 				F89F99B61AF00EBD008719EC /* NetUtils.framework */,
 				F89F99C11AF00EBD008719EC /* NetUtilsTests.xctest */,
+				F84D6AC32180F552000C928E /* libNetUtils.dylib */,
+				F84D6AD12180F5BD000C928E /* NetUtils-macOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +169,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		F84D6ABF2180F552000C928E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F84D6AC62180F552000C928E /* NetUtils_macOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F89F99B31AF00EBD008719EC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,6 +188,41 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		F84D6AC22180F552000C928E /* NetUtils-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F84D6ACB2180F552000C928E /* Build configuration list for PBXNativeTarget "NetUtils-macOS" */;
+			buildPhases = (
+				F84D6ABF2180F552000C928E /* Headers */,
+				F84D6AC02180F552000C928E /* Sources */,
+				F84D6AC12180F552000C928E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NetUtils-macOS";
+			productName = "NetUtils-macOS";
+			productReference = F84D6AC32180F552000C928E /* libNetUtils.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		F84D6AD02180F5BD000C928E /* NetUtils-macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F84D6AD92180F5BE000C928E /* Build configuration list for PBXNativeTarget "NetUtils-macOSTests" */;
+			buildPhases = (
+				F84D6ACD2180F5BD000C928E /* Sources */,
+				F84D6ACE2180F5BD000C928E /* Frameworks */,
+				F84D6ACF2180F5BD000C928E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F84D6AD82180F5BE000C928E /* PBXTargetDependency */,
+			);
+			name = "NetUtils-macOSTests";
+			productName = "NetUtils-macOSTests";
+			productReference = F84D6AD12180F5BD000C928E /* NetUtils-macOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F89F99B51AF00EBD008719EC /* NetUtils */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F89F99CC1AF00EBD008719EC /* Build configuration list for PBXNativeTarget "NetUtils" */;
@@ -170,9 +266,20 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Stefan van den Oord";
 				TargetAttributes = {
+					F84D6AC22180F552000C928E = {
+						CreatedOnToolsVersion = 10.0;
+						DevelopmentTeam = 7EQ9KX3BR9;
+						ProvisioningStyle = Automatic;
+					};
+					F84D6AD02180F5BD000C928E = {
+						CreatedOnToolsVersion = 10.0;
+						DevelopmentTeam = 7EQ9KX3BR9;
+						ProvisioningStyle = Automatic;
+					};
 					F89F99B51AF00EBD008719EC = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0800;
@@ -197,11 +304,20 @@
 			targets = (
 				F89F99B51AF00EBD008719EC /* NetUtils */,
 				F89F99C01AF00EBD008719EC /* NetUtilsTests */,
+				F84D6AC22180F552000C928E /* NetUtils-macOS */,
+				F84D6AD02180F5BD000C928E /* NetUtils-macOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F84D6ACF2180F5BD000C928E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F89F99B41AF00EBD008719EC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,6 +335,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F84D6AC02180F552000C928E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F84D6AC82180F552000C928E /* NetUtils_macOS.m in Sources */,
+				F84D6ACC2180F562000C928E /* Interface.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F84D6ACD2180F5BD000C928E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F84D6ADC2180F5C6000C928E /* NetUtilsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F89F99B11AF00EBD008719EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -238,6 +371,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F84D6AD82180F5BE000C928E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F84D6AC22180F552000C928E /* NetUtils-macOS */;
+			targetProxy = F84D6AD72180F5BE000C928E /* PBXContainerItemProxy */;
+		};
 		F89F99C41AF00EBD008719EC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F89F99B51AF00EBD008719EC /* NetUtils */;
@@ -246,6 +384,143 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		F84D6AC92180F552000C928E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7EQ9KX3BR9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = NetUtils;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		F84D6ACA2180F552000C928E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7EQ9KX3BR9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = NetUtils;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		F84D6ADA2180F5BE000C928E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7EQ9KX3BR9;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "NetUtils-macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vandenoord.NetUtils-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		F84D6ADB2180F5BE000C928E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7EQ9KX3BR9;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "NetUtils-macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vandenoord.NetUtils-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 		F89F99CA1AF00EBD008719EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -421,6 +696,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F84D6ACB2180F552000C928E /* Build configuration list for PBXNativeTarget "NetUtils-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F84D6AC92180F552000C928E /* Debug */,
+				F84D6ACA2180F552000C928E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F84D6AD92180F5BE000C928E /* Build configuration list for PBXNativeTarget "NetUtils-macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F84D6ADA2180F5BE000C928E /* Debug */,
+				F84D6ADB2180F5BE000C928E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F89F99B01AF00EBC008719EC /* Build configuration list for PBXProject "NetUtils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
