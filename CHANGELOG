@@ -1,3 +1,7 @@
+Version 4.0.4
+=============
+- Fixes buffer overflow (#17)
+
 Version 4.0.3
 =============
 - Fixes issue #21 by adding shared scheme for macOS builds.
