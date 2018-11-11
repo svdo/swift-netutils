@@ -4,16 +4,16 @@ osx_image: xcode8.3
 matrix:
   include:
     - os: osx
-      osx_image: xcode9
+      osx_image: xcode10.1
       env:
-        - XCODE=9
-        - IOS_VERSION=11.0
-        - TEST_DIR=Xcode9Swift4
+        - XCODE=10
+        - IOS_VERSION=12.1
+        - TEST_DIR=Swift4
     - os: osx
       env:
         - XCODE=8
         - IOS_VERSION=9.3
-        - TEST_DIR=Xcode8Swift3
+        - TEST_DIR=Swift3
 before_install:
   - gem install xcpretty
 script:
