@@ -17,5 +17,5 @@ matrix:
 before_install:
   - gem install xcpretty
 script:
-  - if [ ${XCODE} = "9" ]; then set -o pipefail && xcodebuild -project NetUtils.xcodeproj -scheme NetUtils test -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6,OS=${IOS_VERSION}"|xcpretty; fi
+  - if [ ${XCODE} = "10" ]; then set -o pipefail && xcodebuild -project NetUtils.xcodeproj -scheme NetUtils test -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6,OS=${IOS_VERSION}"|xcpretty; fi
   - ./Tests/${TEST_DIR}/runTest.sh
