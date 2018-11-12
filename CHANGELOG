@@ -1,3 +1,7 @@
+Version 4.1.0
+=============
+- Adds Linux support
+
 Version 4.0.4
 =============
 - Fixes buffer overflow (#17)
