@@ -2,7 +2,19 @@
 
 import Foundation
 #if swift(>=3.2)
-    import Darwin
+    #if os(Linux)
+        import Glibc
+        typealias InetFamily = UInt16
+        typealias Flags = Int
+        func destinationAddress(_ data: ifaddrs) -> UnsafeMutablePointer<sockaddr>! { return data.ifa_addr }
+        func socketLength4(_ addr: sockaddr) -> UInt32 { return UInt32(MemoryLayout<sockaddr>.size) }
+    #else
+        import Darwin
+        typealias InetFamily = UInt8
+        typealias Flags = Int32
+        func destinationAddress(_ data: ifaddrs) -> UnsafeMutablePointer<sockaddr>! { return data.ifa_dstaddr }
+        func socketLength4(_ addr: sockaddr) -> UInt32 { return socklen_t(addr.sa_len) }
+    #endif
 #else
     import ifaddrs
 #endif
@@ -52,7 +64,7 @@ open class Interface : CustomStringConvertible, CustomDebugStringConvertible {
             var ifaddrPtr = ifaddrsPtr
             while ifaddrPtr != nil {
                 let addr = ifaddrPtr?.pointee.ifa_addr.pointee
-                if addr?.sa_family == UInt8(AF_INET) || addr?.sa_family == UInt8(AF_INET6) {
+                if addr?.sa_family == InetFamily(AF_INET) || addr?.sa_family == InetFamily(AF_INET6) {
                     interfaces.append(Interface(data: (ifaddrPtr?.pointee)!))
                 }
                 ifaddrPtr = ifaddrPtr?.pointee.ifa_next
@@ -88,7 +100,7 @@ open class Interface : CustomStringConvertible, CustomDebugStringConvertible {
     }
 
     convenience init(data:ifaddrs) {
-        let flags = Int32(data.ifa_flags)
+        let flags = Flags(data.ifa_flags)
         let broadcastValid : Bool = ((flags & IFF_BROADCAST) == IFF_BROADCAST)
         self.init(name: String(cString: data.ifa_name),
             family: Interface.extractFamily(data),
@@ -98,16 +110,16 @@ open class Interface : CustomStringConvertible, CustomDebugStringConvertible {
             up: ((flags & IFF_UP) == IFF_UP),
             loopback: ((flags & IFF_LOOPBACK) == IFF_LOOPBACK),
             multicastSupported: ((flags & IFF_MULTICAST) == IFF_MULTICAST),
-            broadcastAddress: ((broadcastValid && data.ifa_dstaddr != nil) ? Interface.extractAddress(data.ifa_dstaddr) : nil))
+            broadcastAddress: ((broadcastValid && destinationAddress(data) != nil) ? Interface.extractAddress(destinationAddress(data)) : nil))
     }
     
     fileprivate static func extractFamily(_ data:ifaddrs) -> Family {
         var family : Family = .other
         let addr = data.ifa_addr.pointee
-        if addr.sa_family == UInt8(AF_INET) {
+        if addr.sa_family == InetFamily(AF_INET) {
             family = .ipv4
         }
-        else if addr.sa_family == UInt8(AF_INET6) {
+        else if addr.sa_family == InetFamily(AF_INET6) {
             family = .ipv6
         }
         else {
@@ -135,7 +147,7 @@ open class Interface : CustomStringConvertible, CustomDebugStringConvertible {
         return address.withMemoryRebound(to: sockaddr.self, capacity: 1) { addr in
             var address : String? = nil
             var hostname = [CChar](repeating: 0, count: Int(2049))
-            if (getnameinfo(&addr.pointee, socklen_t(addr.pointee.sa_len), &hostname,
+            if (getnameinfo(&addr.pointee, socklen_t(socketLength4(addr.pointee)), &hostname,
                             socklen_t(hostname.count), nil, socklen_t(0), NI_NUMERICHOST) == 0) {
                 address = String(cString: hostname)
             }
