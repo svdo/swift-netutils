@@ -17,6 +17,10 @@ import Foundation
     #endif
 #else
     import ifaddrs
+    typealias InetFamily = UInt8
+    typealias Flags = Int32
+    func destinationAddress(_ data: ifaddrs) -> UnsafeMutablePointer<sockaddr>! { return data.ifa_dstaddr }
+    func socketLength4(_ addr: sockaddr) -> UInt32 { return socklen_t(addr.sa_len) }
 #endif
 
 /**
