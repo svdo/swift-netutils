@@ -19,6 +19,7 @@ matrix:
     - os: linux
       dist: trusty
       sudo: required
+      language: generic
       addons:
         apt:
           packages:
