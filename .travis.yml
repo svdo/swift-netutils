@@ -1,9 +1,9 @@
-sudo: false
-language: swift
 matrix:
   include:
     - os: osx
       osx_image: xcode10.1
+      language: swift
+      sudo: false
       env:
         - XCODE=10
         - IOS_VERSION=12.1
@@ -11,6 +11,8 @@ matrix:
         - BUILD_PLATFORM=macOS
     - os: osx
       osx_image: xcode8.3
+      language: swift
+      sudo: false
       env:
         - XCODE=8
         - IOS_VERSION=9.3
