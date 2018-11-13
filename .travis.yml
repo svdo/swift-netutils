@@ -25,9 +25,10 @@ matrix:
       addons:
         apt:
           packages:
-            - libcurl4
             - clang
             - libicu-dev
+            - libpython2.7
+            - libcurl4-openssl-dev
       cache:
         directories:
           - $HOME/swift
