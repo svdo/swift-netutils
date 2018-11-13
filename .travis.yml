@@ -17,5 +17,5 @@ matrix:
 before_install:
   - gem install xcpretty
 script:
-  - if [ ${XCODE} = "10" ]; then set -o pipefail && xcodebuild -enableAddressSanitizer NO -project NetUtils.xcodeproj -scheme NetUtils test -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6,OS=${IOS_VERSION}"; fi
+  - ./.travis-build-script.sh
   - ./Tests/${TEST_DIR}/runTest.sh
