@@ -1,13 +1,22 @@
 #!/bin/sh
 
-set -o pipefail
 
-if [ ${XCODE} = "10" ]; then
-  xcodebuild \
-    -enableAddressSanitizer NO \
-    -project NetUtils.xcodeproj \
-    -scheme NetUtils \
-    test \
-    -sdk iphonesimulator \
-    -destination "platform=iOS Simulator,name=iPhone 6,OS=${IOS_VERSION}"
+if [ ${TRAVIS_OS_NAME} = "osx" ]; then
+
+  if [ ${XCODE} = "10" ]; then
+    set -o pipefail
+    xcodebuild \
+      -enableAddressSanitizer NO \
+      -project NetUtils.xcodeproj \
+      -scheme NetUtils \
+      test \
+      -sdk iphonesimulator \
+      -destination "platform=iOS Simulator,name=iPhone 6,OS=${IOS_VERSION}" | xcpretty
+  fi
+
+elif [ ${TRAVIS_OS_NAME} = "linux" ]; then
+
+    export PATH=$HOME/swift-4.2.1-RELEASE-ubuntu18.04/usr/bin:$PATH
+    swift test
+
 fi

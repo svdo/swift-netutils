@@ -1,6 +1,5 @@
 sudo: false
 language: swift
-osx_image: xcode8.3
 matrix:
   include:
     - os: osx
@@ -9,13 +8,29 @@ matrix:
         - XCODE=10
         - IOS_VERSION=12.1
         - TEST_DIR=Swift4
+        - BUILD_PLATFORM=macOS
     - os: osx
+      osx_image: xcode8.3
       env:
         - XCODE=8
         - IOS_VERSION=9.3
         - TEST_DIR=Swift3
+        - BUILD_PLATFORM=macOS
+    - os: linux
+      dist: trusty
+      sudo: required
+      addons:
+        apt:
+          packages:
+            - libcurl4
+            - clang
+            - libicu-dev
+      cache:
+        directories:
+          - $HOME/swift
 before_install:
-  - gem install xcpretty
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then gem install xcpretty; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./.travis-before-linux.sh; fi
 script:
   - ./.travis-build-script.sh
   - ./Tests/${TEST_DIR}/runTest.sh
