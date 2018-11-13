@@ -19,7 +19,7 @@ matrix:
         - TEST_DIR=Swift3
         - BUILD_PLATFORM=macOS
     - os: linux
-      dist: trusty
+      dist: xenial
       sudo: required
       language: generic
       addons:
