@@ -1,5 +1,6 @@
 #!/bin/sh
 
+set -x
 
 if [ ${TRAVIS_OS_NAME} = "osx" ]; then
 
@@ -16,7 +17,6 @@ if [ ${TRAVIS_OS_NAME} = "osx" ]; then
 
 elif [ ${TRAVIS_OS_NAME} = "linux" ]; then
 
-    export PATH=$HOME/swift/swift-4.2.1-RELEASE-ubuntu16.04/usr/bin:$PATH
-    swift test
+    $HOME/swift/swift-4.2.1-RELEASE-ubuntu16.04/usr/bin/swift test
 
 fi
