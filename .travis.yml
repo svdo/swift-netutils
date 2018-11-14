@@ -1,21 +1,42 @@
-sudo: false
-language: swift
-osx_image: xcode8.3
 matrix:
   include:
     - os: osx
       osx_image: xcode10.1
+      language: swift
+      sudo: false
       env:
         - XCODE=10
         - IOS_VERSION=12.1
         - TEST_DIR=Swift4
+        - BUILD_PLATFORM=macOS
     - os: osx
+      osx_image: xcode8.3
+      language: swift
+      sudo: false
       env:
         - XCODE=8
         - IOS_VERSION=9.3
         - TEST_DIR=Swift3
+        - BUILD_PLATFORM=macOS
+    - os: linux
+      dist: xenial
+      sudo: required
+      language: generic
+      addons:
+        apt:
+          packages:
+            - clang
+            - libicu-dev
+            - libpython2.7
+            - libcurl4-openssl-dev
+      env:
+        - TEST_DIR=Linux
+      cache:
+        directories:
+          - $HOME/swift
 before_install:
-  - gem install xcpretty
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then gem install xcpretty; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./.travis-before-linux.sh; fi
 script:
-  - if [ ${XCODE} = "10" ]; then set -o pipefail && xcodebuild -enableAddressSanitizer NO -project NetUtils.xcodeproj -scheme NetUtils test -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6,OS=${IOS_VERSION}"; fi
+  - ./.travis-build-script.sh
   - ./Tests/${TEST_DIR}/runTest.sh
