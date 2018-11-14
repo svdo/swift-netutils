@@ -29,6 +29,8 @@ matrix:
             - libicu-dev
             - libpython2.7
             - libcurl4-openssl-dev
+      env:
+        - TEST_DIR=Linux
       cache:
         directories:
           - $HOME/swift
