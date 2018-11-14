@@ -36,7 +36,6 @@ matrix:
           - $HOME/swift
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then gem install xcpretty; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./.travis-before-linux.sh; fi
 script:
   - ./.travis-build-script.sh
