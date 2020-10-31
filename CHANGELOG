@@ -1,3 +1,8 @@
+Version 4.2.0
+=============
+- Makes `Interface` `Identifiable` so that it's possible to iterate them 
+  and represent them in a list. Thanks to @ivirtex for this contribution!
+
 Version 4.1.0
 =============
 - Adds Linux support
