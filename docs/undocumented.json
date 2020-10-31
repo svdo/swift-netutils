@@ -1,6 +1,12 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/stefan/Documents/Projects/3dparty/swift-netutils/NetUtils/Interface.swift",
+      "line": 35,
+      "symbol": "Interface.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
   ],
-  "source_directory": "/Users/stefan/Documents/Projects/swift-netutils"
+  "source_directory": "/Users/stefan/Documents/Projects/3dparty/swift-netutils"
 }

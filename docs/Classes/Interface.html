@@ -8,14 +8,22 @@
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
     
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
     <a name="//apple_ref/swift/Class/Interface" class="dashAnchor"></a>
     <a title="Interface Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">NetUtils Docs</a> (100% documented)</p>
+        <p><a href="../index.html">NetUtils 4.2.0 Docs</a> (95% documented)</p>
         <p class="header-right"><a href="https://github.com/svdo/swift-netutils"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -39,6 +47,14 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/Interface">Interface</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -47,6 +63,7 @@
             <h1>Interface</h1>
               <div class="declaration">
                 <div class="language">
+                  
                   <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">Interface</span> <span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">CustomDebugStringConvertible</span></code></pre>
 
                 </div>
@@ -61,10 +78,43 @@
 
 </div>
 
+              <div class="slightly-smaller">
+                <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L34-L248">Show on GitHub</a>
+              </div>
           </section>
           <section class="section task-group-section">
             <div class="task-group">
               <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8NetUtils9InterfaceC2id10Foundation4UUIDVvp"></a>
+                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC2id10Foundation4UUIDVvp">id</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">UUID</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -91,7 +141,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L33-L51">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L37-L55">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -127,7 +177,7 @@ as separate instances of Interface.</p>
                         <p>An array containing all network interfaces in your system.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L59-L76">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L63-L80">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -137,7 +187,7 @@ as separate instances of Interface.</p>
                     <code>
                     <a name="/s:8NetUtils9InterfaceC15createTestDummy_6family7address18multicastSupported16broadcastAddressACSS_AC6FamilyOSSSbSSSgtFZ"></a>
                     <a name="//apple_ref/swift/Method/createTestDummy(_:family:address:multicastSupported:broadcastAddress:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8NetUtils9InterfaceC15createTestDummy_6family7address18multicastSupported16broadcastAddressACSS_AC6FamilyOSSSbSSSgtFZ">createTestDummy(_:family:address:multicastSupported:broadcastAddress:)</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC15createTestDummy_6family7address18multicastSupported16broadcastAddressACSS_AC6FamilyOSSSbSSSgtFZ">createTestDummy(_:<wbr>family:<wbr>address:<wbr>multicastSupported:<wbr>broadcastAddress:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -161,7 +211,7 @@ as separate instances of Interface.</p>
                         <p>An instance of Interface that does <em>not</em> represent a real network interface.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L82-L85">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L86-L89">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -171,7 +221,7 @@ as separate instances of Interface.</p>
                     <code>
                     <a name="/s:8NetUtils9InterfaceC4name6family7address7netmask7running2up8loopback18multicastSupported16broadcastAddressACSS_AC6FamilyOSSSgAOS4bAOtcfc"></a>
                     <a name="//apple_ref/swift/Method/init(name:family:address:netmask:running:up:loopback:multicastSupported:broadcastAddress:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8NetUtils9InterfaceC4name6family7address7netmask7running2up8loopback18multicastSupported16broadcastAddressACSS_AC6FamilyOSSSgAOS4bAOtcfc">init(name:family:address:netmask:running:up:loopback:multicastSupported:broadcastAddress:)</a>
+                    <a class="token" href="#/s:8NetUtils9InterfaceC4name6family7address7netmask7running2up8loopback18multicastSupported16broadcastAddressACSS_AC6FamilyOSSSgAOS4bAOtcfc">init(name:<wbr>family:<wbr>address:<wbr>netmask:<wbr>running:<wbr>up:<wbr>loopback:<wbr>multicastSupported:<wbr>broadcastAddress:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -191,7 +241,7 @@ as separate instances of Interface.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L90-L100">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L94-L104">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -221,7 +271,7 @@ as separate instances of Interface.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L179-L197">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L183-L201">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -251,7 +301,7 @@ as separate instances of Interface.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L200">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L204">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -281,7 +331,7 @@ as separate instances of Interface.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L203">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L207">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -311,7 +361,7 @@ as separate instances of Interface.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L206">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L210">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -341,7 +391,7 @@ as separate instances of Interface.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L209">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L213">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -371,7 +421,7 @@ as separate instances of Interface.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L212">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L216">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -401,7 +451,7 @@ as separate instances of Interface.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L215">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L219">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -431,7 +481,7 @@ as separate instances of Interface.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L218">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L222">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -461,7 +511,7 @@ as separate instances of Interface.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L221">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L225">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -491,7 +541,7 @@ as separate instances of Interface.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L224">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L228">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -521,7 +571,7 @@ as separate instances of Interface.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L232">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L236">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -551,7 +601,7 @@ as separate instances of Interface.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L235-L243">Show on GitHub</a>
+                        <a href="https://github.com/svdo/swift-netutils/tree/4.1.0/NetUtils/Interface.swift#L239-L247">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -562,7 +612,7 @@ as separate instances of Interface.</p>
         </section>
         <section id="footer">
           <p>Copyright © 2015 <a class="link" href="https://github.com/svdo" target="_blank" rel="external">Stefan van den Oord</a>. All rights reserved</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
