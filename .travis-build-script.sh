@@ -4,7 +4,7 @@ set -x
 
 if [ ${TRAVIS_OS_NAME} = "osx" ]; then
 
-  if [ ${XCODE} = "10" ]; then
+  if [ ${XCODE} = "12" ]; then
     set -o pipefail
     xcodebuild \
       -enableAddressSanitizer NO \
@@ -12,7 +12,7 @@ if [ ${TRAVIS_OS_NAME} = "osx" ]; then
       -scheme NetUtils \
       test \
       -sdk iphonesimulator \
-      -destination "platform=iOS Simulator,name=iPhone 6,OS=${IOS_VERSION}" | xcpretty
+      -destination "platform=iOS Simulator,name=iPhone 8,OS=${IOS_VERSION}" | xcpretty
   fi
 
 elif [ ${TRAVIS_OS_NAME} = "linux" ]; then
