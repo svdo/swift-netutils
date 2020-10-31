@@ -7,7 +7,6 @@ if [ ${TRAVIS_OS_NAME} = "osx" ]; then
   if [ ${XCODE} = "12" ]; then
     set -o pipefail
     xcodebuild \
-      -enableAddressSanitizer NO \
       -project NetUtils.xcodeproj \
       -scheme NetUtils \
       test \
