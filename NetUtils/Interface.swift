@@ -31,7 +31,7 @@ import Foundation
  *
  * - See: `/usr/include/ifaddrs.h`
  */
-open class Interface : CustomStringConvertible, CustomDebugStringConvertible, Identifiable {
+open class Interface : CustomStringConvertible, CustomDebugStringConvertible {
     public var id = UUID()
     /// The network interface family (IPv4 or IPv6).
     public enum Family : Int {
@@ -246,3 +246,6 @@ open class Interface : CustomStringConvertible, CustomDebugStringConvertible, Id
         return s
     }
 }
+
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+extension Interface: Identifiable {}
