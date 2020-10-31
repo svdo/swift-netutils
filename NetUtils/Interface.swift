@@ -247,5 +247,6 @@ open class Interface : CustomStringConvertible, CustomDebugStringConvertible {
     }
 }
 
-@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+#if swift(>=5)
 extension Interface: Identifiable {}
+#endif
