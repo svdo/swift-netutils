@@ -132,18 +132,17 @@ open class Interface : CustomStringConvertible, CustomDebugStringConvertible {
         return family
     }
 
-    fileprivate static func extractAddress(_ address: UnsafeMutablePointer<sockaddr>?) -> String? {
+    fileprivate static func extractAddress(_ address: UnsafeMutableRawPointer?) -> String? {
         guard let address = address else { return nil }
-        return address.withMemoryRebound(to: sockaddr_storage.self, capacity: 1) {
-            if (address.pointee.sa_family == sa_family_t(AF_INET)) {
-                return extractAddress_ipv4($0)
-            }
-            else if (address.pointee.sa_family == sa_family_t(AF_INET6)) {
-                return extractAddress_ipv6($0)
-            }
-            else {
-                return nil
-            }
+        let sockaddrStoragePointer = address.bindMemory(to: sockaddr_storage.self, capacity: 1)
+        if (sockaddrStoragePointer.pointee.ss_family == sa_family_t(AF_INET)) {
+            return extractAddress_ipv4(sockaddrStoragePointer)
+        }
+        else if (sockaddrStoragePointer.pointee.ss_family == sa_family_t(AF_INET6)) {
+            return extractAddress_ipv6(sockaddrStoragePointer)
+        }
+        else {
+            return nil
         }
     }
     
