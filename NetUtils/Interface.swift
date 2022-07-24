@@ -134,20 +134,18 @@ open class Interface : CustomStringConvertible, CustomDebugStringConvertible {
 
     fileprivate static func extractAddress(_ address: UnsafeMutablePointer<sockaddr>?) -> String? {
         guard let address = address else { return nil }
-        return address.withMemoryRebound(to: sockaddr_storage.self, capacity: 1) {
-            if (address.pointee.sa_family == sa_family_t(AF_INET)) {
-                return extractAddress_ipv4($0)
-            }
-            else if (address.pointee.sa_family == sa_family_t(AF_INET6)) {
-                return extractAddress_ipv6($0)
-            }
-            else {
-                return nil
-            }
+        if (address.pointee.sa_family == sa_family_t(AF_INET)) {
+            return extractAddress_ipv4(address)
+        }
+        else if (address.pointee.sa_family == sa_family_t(AF_INET6)) {
+            return extractAddress_ipv6(address)
+        }
+        else {
+            return nil
         }
     }
     
-    fileprivate static func extractAddress_ipv4(_ address:UnsafeMutablePointer<sockaddr_storage>) -> String? {
+    fileprivate static func extractAddress_ipv4(_ address:UnsafeMutablePointer<sockaddr>) -> String? {
         return address.withMemoryRebound(to: sockaddr.self, capacity: 1) { addr in
             var address : String? = nil
             var hostname = [CChar](repeating: 0, count: Int(2049))
@@ -164,13 +162,13 @@ open class Interface : CustomStringConvertible, CustomDebugStringConvertible {
         }
     }
     
-    fileprivate static func extractAddress_ipv6(_ address:UnsafeMutablePointer<sockaddr_storage>) -> String? {
+    fileprivate static func extractAddress_ipv6(_ address:UnsafeMutablePointer<sockaddr>) -> String? {
         var addr = address.pointee
         var ip : [Int8] = [Int8](repeating: Int8(0), count: Int(INET6_ADDRSTRLEN))
         return inetNtoP(&addr, ip: &ip)
     }
     
-    fileprivate static func inetNtoP(_ addr:UnsafeMutablePointer<sockaddr_storage>, ip:UnsafeMutablePointer<Int8>) -> String? {
+    fileprivate static func inetNtoP(_ addr:UnsafeMutablePointer<sockaddr>, ip:UnsafeMutablePointer<Int8>) -> String? {
         return addr.withMemoryRebound(to: sockaddr_in6.self, capacity: 1) { addr6 in
             let conversion:UnsafePointer<CChar> = inet_ntop(AF_INET6, &addr6.pointee.sin6_addr, ip, socklen_t(INET6_ADDRSTRLEN))
             return String(cString: conversion)
