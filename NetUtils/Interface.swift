@@ -163,9 +163,8 @@ open class Interface : CustomStringConvertible, CustomDebugStringConvertible {
     }
     
     fileprivate static func extractAddress_ipv6(_ address:UnsafeMutablePointer<sockaddr>) -> String? {
-        var addr = address.pointee
         var ip : [Int8] = [Int8](repeating: Int8(0), count: Int(INET6_ADDRSTRLEN))
-        return inetNtoP(&addr, ip: &ip)
+        return inetNtoP(address, ip: &ip)
     }
     
     fileprivate static func inetNtoP(_ addr:UnsafeMutablePointer<sockaddr>, ip:UnsafeMutablePointer<Int8>) -> String? {
