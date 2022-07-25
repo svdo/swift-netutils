@@ -18,4 +18,4 @@ jobs:
     - name: Run tests
       run: swift test -v
     - name: Build sample project
-      run: cd Tests/Linux && ./runTest.sh
+      run: cd Tests/Linux/App && swift build -v
