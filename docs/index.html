@@ -16,19 +16,19 @@
     <a title="NetUtils  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">NetUtils 4.2.0 Docs</a> (95% documented)</p>
-        <p class="header-right"><a href="https://github.com/svdo/swift-netutils"><img src="img/gh.png"/>View on GitHub</a></p>
-        <p class="header-right">
+        <p><a href="index.html">NetUtils 4.2.1 Docs</a> (95% documented)</p>
+        <p class="header-right"><a href="https://github.com/svdo/swift-netutils"><img src="img/gh.png" alt="GitHub"/>View on GitHub</a></p>
+        <div class="header-right">
           <form role="search" action="search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
           </form>
-        </p>
+        </div>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
         <a href="index.html">NetUtils Reference</a>
-        <img id="carat" src="img/carat.png" />
+        <img id="carat" src="img/carat.png" alt=""/>
         NetUtils  Reference
       </p>
     </div>
@@ -70,29 +70,34 @@
 <a href="http://svdo.github.io/swift-netutils/"><img src="http://svdo.github.io/swift-netutils/badge.svg" alt="Percentage Documented Badge"></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a>
 <a href="https://github.com/apple/swift-package-manager"><img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg" alt="Swift Package Manager compatible"></a>
-<a href="https://travis-ci.org/svdo/swift-netutils"><img src="https://travis-ci.org/svdo/swift-netutils.svg?branch=master" alt="Build Status"></a>
 <a href="https://gitter.im/NetUtils-for-Swift/Lobby"><img src="https://badges.gitter.im/NetUtils-for-Swift/Lobby.svg" alt="Join the chat at https://gitter.im/NetUtils-for-Swift/Lobby"></a></p>
 
-<p>Swift library that simplifies getting information about your network interfaces and their properties, both for iOS, macOS and Linux.
-This library is a wrapper around the BSD APIs like <code>getifaddrs</code>, to make it easy to use them from Swift.</p>
+<p>Swift library that simplifies getting information about your network interfaces
+and their properties, both for iOS, macOS and Linux. This library is a wrapper
+around the BSD APIs like <code>getifaddrs</code>, to make it easy to use them from Swift.</p>
 
-<p>Recommended way of integrating this library on macOS or iOS is using CocoaPods: <a href="https://cocoapods.org/pods/NetUtils">https://cocoapods.org/pods/NetUtils</a>. On Linux I recommend using the Swift Package Manager.</p>
+<p>Recommended way of integrating this library on macOS or iOS is using CocoaPods:
+<a href="https://cocoapods.org/pods/NetUtils">https://cocoapods.org/pods/NetUtils</a>. On Linux I recommend using the Swift
+Package Manager.</p>
 
-<p>This library works with both Swift 3 and Swift 4.</p>
+<p>This library works with both Swift 5 and Swift 5.</p>
 <h2 id='background-info' class='heading'>Background Info</h2>
 
-<p>Some system APIs you can simply use from Swift, but others you cannot. The difference is that some are made available
-as a module, and some are not. The APIs around network interfaces are not exposed as a module, which means that you
-cannot use them from Swift without defining a module for them yourself. I documented this problem extensively over
-here: <a href="https://ind.ie/labs/blog/using-system-headers-in-swift">https://ind.ie/labs/blog/using-system-headers-in-swift</a>.</p>
+<p>Some system APIs you can simply use from Swift, but others you cannot. The
+difference is that some are made available as a module, and some are not. The
+APIs around network interfaces are not exposed as a module, which means that you
+cannot use them from Swift without defining a module for them yourself. I
+documented this problem extensively <a href="https://medium.com/@stefanvdoord/using-system-headers-in-swift-8731e972adfe">in a blog post</a>.</p>
 <h2 id='installation' class='heading'>Installation</h2>
 
 <p>This library can be installed via CocoaPods, Carthage and Swift Package Manager.</p>
 <h2 id='usage' class='heading'>Usage</h2>
 
-<p>This module contains only one class: <code><a href="Classes/Interface.html">Interface</a></code>. This class represents a network interface. It has a static method
-to list all interfaces, somewhat surprisingly called <code>allInterfaces()</code>. This will return an array of <code><a href="Classes/Interface.html">Interface</a></code>
-objects, which contain properties like their IP address, family, whether they are up and running, etc.</p>
+<p>This module contains only one class: <code><a href="Classes/Interface.html">Interface</a></code>. This class represents a
+network interface. It has a static method to list all interfaces, somewhat
+surprisingly called <code>allInterfaces()</code>. This will return an array of <code><a href="Classes/Interface.html">Interface</a></code>
+objects, which contain properties like their IP address, family, whether they
+are up and running, etc.</p>
 
 <p>Please note that both IPv4 and IPv6 interfaces are supported.</p>
 <h2 id='license' class='heading'>License</h2>
@@ -102,11 +107,10 @@ objects, which contain properties like their IP address, family, whether they ar
           </section>
         </section>
         <section id="footer">
-          <p>Copyright © 2015 <a class="link" href="https://github.com/svdo" target="_blank" rel="external">Stefan van den Oord</a>. All rights reserved</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Copyright © 2015 <a class="link" href="https://github.com/svdo" target="_blank" rel="external noopener">Stefan van den Oord</a>. All rights reserved</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>
   </body>
-</div>
 </html>

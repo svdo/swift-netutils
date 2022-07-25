@@ -1,3 +1,8 @@
+Version 4.2.1
+=============
+- Fixes runtime crash using `withMemoryRebound` and `sockaddr_storage` on iOS16 and macOS13
+  (thanks to @palerikm and @dsmurfin)
+
 Version 4.2.0
 =============
 - Makes `Interface` `Identifiable` so that it's possible to iterate them 
