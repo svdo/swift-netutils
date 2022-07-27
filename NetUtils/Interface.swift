@@ -208,6 +208,21 @@ open class Interface : CustomStringConvertible, CustomDebugStringConvertible {
     
     /// `IFF_MULTICAST` flag of `ifaddrs->ifa_flags`.
     open var supportsMulticast: Bool { return multicastSupported }
+    
+    /// IsLinkLocalUnicast as defined in https://golang.org/src/net/ip.go
+    open var isLinkLocalUnicast: Bool {
+        guard let addressBytes = self.addressBytes else {
+            return false
+        }
+        switch self.family {
+        case .ipv4:
+            return addressBytes[0] == 169 && addressBytes[1] == 254
+        case .ipv6:
+            return addressBytes[0] == 0xfe && addressBytes[1] & 0xc0 == 0x80
+        case .other:
+            return false
+        }
+    }
 
     /// Field `ifaddrs->ifa_name`.
     public let name : String
